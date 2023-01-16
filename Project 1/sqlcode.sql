@@ -4,7 +4,7 @@ CREATE SCHEMA pro;
 
 CREATE TABLE pro.skills(
     [skill_id] INT NOT NULL IDENTITY(1,1),
-    skill_name VARCHAR(256) UNIQUE NOT NULL,
+    skill_name VARCHAR(256)  NOT NULL,
     skill_experience INT NOT NULL,
     PRIMARY KEY([skill_id]),
     us_id INT NOT NULL,
@@ -192,6 +192,13 @@ ALTER TABLE pro.[user] ALTER COLUMN phone_no bigint;
 SELECT * FROM pro.[user]
 WHERE email_id = 'abdulaleem@gmail.com' and password = '12345678';
 
+
+--Add Skill Check
+INSERT into pro.skills(skill_name,skill_experience,us_id)
+VALUES('Python',20,3);
+
+-- Alter skills
+ALTER TABLE [pro].[skills] DROP CONSTRAINT [UQ__skills__73C038AD9ED164F9]
 
 
 

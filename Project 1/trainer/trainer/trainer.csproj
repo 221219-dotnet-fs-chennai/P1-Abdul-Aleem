@@ -18,5 +18,6 @@
   <ItemGroup>
     <ProjectReference Include="..\form\form.csproj" />
     <ProjectReference Include="..\datahandle\datahandle.csproj" />
+    <ProjectReference Include="..\UserProfile\UserProfile.csproj" />
   </ItemGroup>
 </Project>

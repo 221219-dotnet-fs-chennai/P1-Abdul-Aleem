@@ -1,4 +1,5 @@
 ﻿using System;
+using UserProfile;
 namespace trainer
 {
     public class LoginForm
@@ -18,28 +19,38 @@ namespace trainer
                 Console.WriteLine("3 - Submit");
                 Console.WriteLine(IsLoggedIn);
 
-
-                int choice = Convert.ToInt32(Console.ReadLine());
-                switch (choice)
+                if (IsLoggedIn == "Your Logged In")
                 {
-                    case 0:
-                        runner = false;
-                        break;
-                    case 1:
-                        Console.WriteLine("Enter The Email ID");
-                        lg.EmailId = Console.ReadLine();
-                        break;
-                    case 2:
-                        Console.WriteLine("Enter Your Password");
-                        lg.Password = Console.ReadLine();
-                        break;
-                    case 3:
-                        Console.WriteLine("Submitting....");
-                        lg.LoginPageSubmission();
-                        Console.WriteLine("Submited");
-                        break;
+                    UserCreationMenu uc = new UserCreationMenu(lg.IsUserId);
+                    runner = false;
+                }
+
+                else
+                {
 
 
+                    int choice = Convert.ToInt32(Console.ReadLine());
+                    switch (choice)
+                    {
+                        case 0:
+                            runner = false;
+                            break;
+                        case 1:
+                            Console.WriteLine("Enter The Email ID");
+                            lg.EmailId = Console.ReadLine();
+                            break;
+                        case 2:
+                            Console.WriteLine("Enter Your Password");
+                            lg.Password = Console.ReadLine();
+                            break;
+                        case 3:
+                            Console.WriteLine("Submitting....");
+                            lg.LoginPageSubmission();
+                            Console.WriteLine("Submited");
+                            break;
+
+
+                    }
                 }
             }
 
