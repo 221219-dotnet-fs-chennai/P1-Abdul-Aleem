@@ -188,7 +188,9 @@ VALUES('React',20,2);
 
 ALTER TABLE pro.[user] ALTER COLUMN phone_no bigint;
 
-
+-- Login Check
+SELECT * FROM pro.[user]
+WHERE email_id = 'abdulaleem@gmail.com' and password = '12345678';
 
 
 
