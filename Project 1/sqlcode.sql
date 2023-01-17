@@ -200,5 +200,18 @@ VALUES('Python',20,3);
 -- Alter skills
 ALTER TABLE [pro].[skills] DROP CONSTRAINT [UQ__skills__73C038AD9ED164F9]
 
+-- Skill of particular user
+select k.skill_id,k.skill_name,k.skill_experience from pro.Skills as k
+WHERE k.us_id = 2;
+
+-- Skill Update Statement
+-- UPDATE table_name
+-- SET column1 = value1, column2 = value2, ...
+-- WHERE condition;
+
+UPDATE pro.skills
+SET skill_name = 'helloworld', skill_experience = 21
+WHERE skill_id = 12;
+
 
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.IO;
+using System.Data;
 
 namespace datahandle
 {
@@ -15,8 +16,6 @@ namespace datahandle
         //public SqlHandle()
         //{
 
-        //    //using SqlConnection con = new SqlConnection("Server=tcp:abdul-revature-db.database.windows.net,1433;Initial Catalog=abdul_db;Persist Security Info=False;User ID=abdulaleem;Password=Aa@1052001;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
-        //    using SqlConnection con = new SqlConnection(Connection);
 
         //    con.Open();
         //    SqlCommand cmd = new SqlCommand("select * from pro.[user];", con);
@@ -52,7 +51,6 @@ namespace datahandle
                 Console.WriteLine(reader.GetInt32(0));
                 UserId = reader.GetInt32(0);
 
-
             }
             //Console.WriteLine(reader);
             con.Close();
@@ -80,6 +78,26 @@ namespace datahandle
             //con.Close();
             return SkillName;
         }
+
+        public DataTable SqlQeryWriterSkillUpdate(string q)
+        {
+            using SqlConnection con = new SqlConnection(Connection);
+
+            con.Open();
+            Console.WriteLine(q);
+            SqlCommand cmd = new SqlCommand(q, con);
+            //SqlDataAdapter reader = cmd.ExecuteReader();
+            DataTable dt = new DataTable();
+            using (SqlDataAdapter a = new SqlDataAdapter(cmd))
+            {
+                a.Fill(dt);
+            }
+
+            return dt;
+
+        }
+
+
 
 
 

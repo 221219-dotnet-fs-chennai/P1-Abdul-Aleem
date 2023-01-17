@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Reflection.PortableExecutable;
 using datahandle;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace trainer
 {
@@ -40,8 +43,18 @@ namespace trainer
                     break;
                 case 3:
                     SqlHandle sq = new SqlHandle();
-                    Console.WriteLine(sq.SqlQueryWriter(@"select * from pro.[user]"));
-                    Program.MainLoop = false;
+                    DataTable reader = sq.SqlQeryWriterSkillUpdate(@"select * from pro.[user]");
+                    //Console.WriteLine(reader);
+                    foreach (DataRow dataRow in reader.Rows)
+                    {
+                        foreach (var item in dataRow.ItemArray)
+                        {
+                            Console.Write(item + " ");
+                        }
+                        Console.WriteLine("");
+                    }
+
+                    //Program.MainLoop = false;
                     break;
 
 

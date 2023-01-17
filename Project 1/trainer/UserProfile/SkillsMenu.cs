@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using datahandle;
+using Microsoft.VisualBasic;
+
 namespace UserProfile
 {
     public class SkillsMenu
@@ -27,6 +30,10 @@ namespace UserProfile
                     case 1:
                         AddSkills ads = new AddSkills();
                         ads.SkillAdder(usid);
+                        break;
+                    case 2:
+                        UpdateSkills up = new UpdateSkills();
+                        up.SkillUpdate(usid);
                         break;
                 }
 
@@ -72,6 +79,46 @@ namespace UserProfile
 
         }
 
+    }
+
+    public class UpdateSkills
+    {
+        public void SkillUpdate(int usid)
+        {
+            SqlHandle sq = new SqlHandle();
+
+            DataTable reader = sq.SqlQeryWriterSkillUpdate($"select k.skill_id,k.skill_name,k.skill_experience from pro.Skills as k WHERE k.us_id = {usid};");
+            //Console.WriteLine(reader);
+            Console.WriteLine("SkillID    SkillName   SkillExperience");
+            foreach (DataRow dataRow in reader.Rows)
+            {
+                foreach (var item in dataRow.ItemArray)
+                {
+                    Console.Write(item + " ");
+                }
+                Console.WriteLine("");
+            }
+
+            Console.WriteLine("Enter the SkillId to update");
+            int res = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the SkillName to Update to");
+            string resname = Console.ReadLine();
+            Console.WriteLine("Enter the Skill Experience");
+            int resex = Convert.ToInt32(Console.ReadLine());
+
+            //            UPDATE pro.skills
+            //SET skill_name = 'helloworld', skill_experience = 21
+            //WHERE skill_id = 12;
+
+            int x = sq.SqlQueryWriter($"UPDATE pro.skills SET skill_name = '{resname}', skill_experience = {resex} WHERE skill_id = {res};");
+            Console.WriteLine("Update Success");
+
+
+
+
+
+
+        }
     }
 }
 
