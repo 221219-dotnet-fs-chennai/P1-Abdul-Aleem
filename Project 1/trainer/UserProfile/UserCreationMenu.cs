@@ -13,9 +13,9 @@ namespace UserProfile
 
                 Console.WriteLine("Hi Abdul");
                 Console.WriteLine("0 - LogOut");
-                Console.WriteLine("1 - Skills");
-                Console.WriteLine("2 - Company");
-                Console.WriteLine("3 - Education");
+                Console.WriteLine("1 - Education");
+                Console.WriteLine("2 - Skills");
+                Console.WriteLine("3 - Experience");
                 Console.WriteLine("4 - Certification");
                 Console.WriteLine("5 - My Profile");
 
@@ -27,18 +27,20 @@ namespace UserProfile
                         runner = false;
                         break;
                     case 1:
-                        Console.WriteLine("Skills");
-                        SkillsMenu sm = new SkillsMenu(usid);
-                        break;
-                    case 2:
-                        Console.WriteLine("Company");
+                        Console.WriteLine("Education");
                         EducationMenu em = new EducationMenu(usid);
                         break;
+                    case 2:
+                        Console.WriteLine("Skills");
+                        SkillsMenu sk = new SkillsMenu(usid);
+                        break;
                     case 3:
-                        Console.WriteLine("Education");
+                        Console.WriteLine("Experience");
+                        CompanyMenu ex = new CompanyMenu(usid);
                         break;
                     case 4:
                         Console.WriteLine("Certification");
+                        CertificationMenu ct = new CertificationMenu(usid);
                         break;
                     case 5:
                         Console.WriteLine("My Profile");
