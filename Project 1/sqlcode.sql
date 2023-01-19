@@ -53,8 +53,8 @@ CREATE TABLE pro.edu(
 SELECT * FROM pro.edu;
 
 -- insert values to edu table
-INSERT INTO pro.edu(institution_name,course_name,[start_date],[end_date],cgpa)
-VALUES('Akka university','Electronics and comm engineering','2018-07-10','2022-07-10','6.9');
+INSERT INTO pro.edu(institution_name,course_name,[start_date],[end_date],cgpa,us_id)
+VALUES('Akka university','Electronics and comm engineering','2018-07-10','2022-07-10','6.9',2);
 
 --truncate for edu
 truncate TABLE pro.edu;

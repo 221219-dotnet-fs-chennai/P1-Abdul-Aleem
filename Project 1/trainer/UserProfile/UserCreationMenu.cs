@@ -32,6 +32,7 @@ namespace UserProfile
                         break;
                     case 2:
                         Console.WriteLine("Company");
+                        EducationMenu em = new EducationMenu(usid);
                         break;
                     case 3:
                         Console.WriteLine("Education");
