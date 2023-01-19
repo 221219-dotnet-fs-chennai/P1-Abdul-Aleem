@@ -35,6 +35,18 @@ namespace UserProfile
                         UpdateSkills up = new UpdateSkills();
                         up.SkillUpdate(usid);
                         break;
+                    case 3:
+                        DeleteSkill dl = new DeleteSkill();
+                        dl.SkillDelete(usid);
+                        break;
+                    case 4:
+                        ViewSkills vs = new ViewSkills();
+                        vs.SkillView(usid);
+                        break;
+                    default:
+                        Console.WriteLine("Please enter a valid input");
+                        break;
+
                 }
 
 
@@ -110,8 +122,10 @@ namespace UserProfile
             //SET skill_name = 'helloworld', skill_experience = 21
             //WHERE skill_id = 12;
 
-            int x = sq.SqlQueryWriter($"UPDATE pro.skills SET skill_name = '{resname}', skill_experience = {resex} WHERE skill_id = {res};");
+            sq.sqlQueryDelete($"UPDATE pro.skills SET skill_name = '{resname}', skill_experience = {resex} WHERE skill_id = {res};");
             Console.WriteLine("Update Success");
+
+
 
 
 
@@ -120,5 +134,54 @@ namespace UserProfile
 
         }
     }
+
+    public class DeleteSkill
+    {
+        public void SkillDelete(int usid)
+        {
+            SqlHandle sq = new SqlHandle();
+
+            DataTable reader = sq.SqlQeryWriterSkillUpdate($"select k.skill_id,k.skill_name,k.skill_experience from pro.Skills as k WHERE k.us_id = {usid};");
+            //Console.WriteLine(reader);
+            Console.WriteLine("SkillID    SkillName   SkillExperience");
+            foreach (DataRow dataRow in reader.Rows)
+            {
+                foreach (var item in dataRow.ItemArray)
+                {
+                    Console.Write(item + " ");
+                }
+                Console.WriteLine("");
+            }
+            Console.WriteLine("Enter the SkillId you want to delete");
+            int skill_id = Convert.ToInt32(Console.ReadLine());
+            sq.sqlQueryDelete($"DELETE FROM pro.skills WHERE skill_id ={skill_id}");
+            Console.WriteLine("Deleted SuccessFully");
+
+        }
+    }
+
+    public class ViewSkills
+    {
+        public void SkillView(int usid)
+        {
+            SqlHandle sq = new SqlHandle();
+
+            DataTable reader = sq.SqlQeryWriterSkillUpdate($"select k.skill_id,k.skill_name,k.skill_experience from pro.Skills as k WHERE k.us_id = {usid};");
+            //Console.WriteLine(reader);
+            Console.WriteLine("SkillID    SkillName   SkillExperience");
+            foreach (DataRow dataRow in reader.Rows)
+            {
+                foreach (var item in dataRow.ItemArray)
+                {
+                    Console.Write(item + " ");
+                }
+                Console.WriteLine("");
+            }
+        }
+    }
+
+
+
+
 }
 

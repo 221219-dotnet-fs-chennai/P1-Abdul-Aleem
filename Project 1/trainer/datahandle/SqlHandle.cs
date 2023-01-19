@@ -98,6 +98,18 @@ namespace datahandle
         }
 
 
+        public void sqlQueryDelete(string q)
+        {
+            using SqlConnection con = new SqlConnection(Connection);
+            con.Open();
+            SqlCommand cmd = new SqlCommand(q, con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+
+
+        }
+
+
 
 
 

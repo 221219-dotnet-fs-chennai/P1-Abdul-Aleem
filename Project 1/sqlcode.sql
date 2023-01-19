@@ -214,4 +214,12 @@ SET skill_name = 'helloworld', skill_experience = 21
 WHERE skill_id = 12;
 
 
+-- delete a skill
+
+SELECT * FROM pro.skills;
+DELETE FROM pro.skills 
+WHERE skill_id = 12
+
+
+
 
