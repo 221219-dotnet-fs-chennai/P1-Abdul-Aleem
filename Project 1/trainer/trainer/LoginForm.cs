@@ -21,7 +21,7 @@ namespace trainer
 
                 if (IsLoggedIn == "Your Logged In")
                 {
-                    UserCreationMenu uc = new UserCreationMenu(lg.IsUserId);
+                    UserCreationMenu uc = new UserCreationMenu(lg.IsUserId, lg.UserName);
                     runner = false;
                 }
 

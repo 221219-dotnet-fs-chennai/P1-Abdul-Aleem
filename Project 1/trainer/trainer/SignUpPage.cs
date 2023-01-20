@@ -8,7 +8,8 @@ namespace trainer
     public class SignUpPage
 
     {
-        Regex regemail = new Regex(@"/(\w+@\w+[.]+\w+)/");
+        Regex regemail = new Regex(@"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$");
+        Regex regpass = new Regex(@"^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$");
         SqlHandle sq = new SqlHandle();
 
 
@@ -58,7 +59,16 @@ namespace trainer
                 //{
                 //    emailid = value;
                 //}
-                emailid = value;
+                if (regemail.IsMatch(value))
+                {
+
+                    emailid = value;
+
+                }
+                else
+                {
+                    Console.WriteLine("Enter a valid email");
+                }
                 //else
                 //{
                 //    Console.WriteLine("Enter a valid email id");
@@ -76,7 +86,15 @@ namespace trainer
         {
             set
             {
-                password = value;
+                if (regpass.IsMatch(value))
+                {
+                    password = value;
+
+                }
+                else
+                {
+                    Console.WriteLine("1.Password must contain min 8 letter \n2.Must contain min 1 capital letter \n3.Must contain atleast 1 small letter");
+                }
             }
             get
             {

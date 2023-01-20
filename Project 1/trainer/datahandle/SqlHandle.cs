@@ -11,6 +11,7 @@ namespace datahandle
         private string Connection = File.ReadAllText(@"/Users/abdulaleem/Documents/Project Dev/01/conf.txt");
         public int UserId;
         public string SkillName;
+        public string UserNameLogin;
 
 
         //public SqlHandle()
@@ -42,7 +43,7 @@ namespace datahandle
             using SqlConnection con = new SqlConnection(Connection);
 
             con.Open();
-            Console.WriteLine(q);
+            //Console.WriteLine(q);
             SqlCommand cmd = new SqlCommand(q, con);
             using SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
@@ -50,11 +51,34 @@ namespace datahandle
 
                 Console.WriteLine(reader.GetInt32(0));
                 UserId = reader.GetInt32(0);
+                //UserNameLogin = reader.GetString(1);
 
             }
             //Console.WriteLine(reader);
             con.Close();
             return UserId;
+        }
+
+        public string SqlQueryWriterName(string q)
+        {
+            using SqlConnection con = new SqlConnection(Connection);
+
+            con.Open();
+            //Console.WriteLine(q);
+            SqlCommand cmd = new SqlCommand(q, con);
+            using SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                UserNameLogin = reader.GetString(1);
+                //Console.WriteLine(reader.GetInt32(0));
+                //UserId = reader.GetInt32(0);
+                //UserNameLogin = reader.GetString(1);
+
+            }
+            //Console.WriteLine(reader);
+            con.Close();
+            return UserNameLogin;
+
         }
 
         public string SqlQueryWriterSkill(string q)

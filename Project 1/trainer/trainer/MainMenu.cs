@@ -3,6 +3,8 @@ using System.Reflection.PortableExecutable;
 using datahandle;
 using System.Data.SqlClient;
 using System.Data;
+using UserProfile;
+
 
 namespace trainer
 {
@@ -13,12 +15,12 @@ namespace trainer
         public void MainMenuLoop()
         {
             //Program.MainLoop mp = new Program.MainLoop();
-            Console.WriteLine("0 - Back");
+            Console.WriteLine("0 - Exit");
             Console.WriteLine("1 - Signup");
             Console.WriteLine("2 - Login");
 
             //Dummy
-            Console.WriteLine("3 - Read");
+            //Console.WriteLine("3 - Read");
 
 
 
@@ -27,7 +29,7 @@ namespace trainer
             switch (inp)
             {
                 case 0:
-                    Console.WriteLine("Back pressed");
+                    Console.WriteLine("Exit...........");
 
                     Program.MainLoop = false;
                     break;
@@ -42,19 +44,25 @@ namespace trainer
                     //Program.MainLoop = false;
                     break;
                 case 3:
-                    SqlHandle sq = new SqlHandle();
-                    DataTable reader = sq.SqlQeryWriterSkillUpdate(@"select * from pro.[user]");
-                    //Console.WriteLine(reader);
-                    foreach (DataRow dataRow in reader.Rows)
+                    //MyProfile mp = new MyProfile();
+                    //mp.MyProfile1(2);
+                    //mp.MyProfileEdu(2);
+                    //mp.MyProfileExperience(2);
+                    //mp.MyProfileSkills(2);
+                    //mp.MyProfileCertification(2);
+                    SqlHandle ss = new SqlHandle();
+
+                    try
                     {
-                        foreach (var item in dataRow.ItemArray)
-                        {
-                            Console.Write(item + " ");
-                        }
-                        Console.WriteLine("");
+
+                        int k = ss.SqlQueryWriter(@"select * from jsjsjs");
                     }
 
-                    //Program.MainLoop = false;
+                    catch (SqlException e)
+                    {
+                        Console.WriteLine("Some error occured");
+                    }
+
                     break;
 
 

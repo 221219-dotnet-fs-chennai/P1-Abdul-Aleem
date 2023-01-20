@@ -4,14 +4,25 @@ namespace UserProfile
 {
     public class UserCreationMenu
     {
-        public UserCreationMenu(int usid)
+        public UserCreationMenu(int usid, string name)
         {
             bool runner = true;
 
             while (runner)
             {
 
-                Console.WriteLine("Hi Abdul");
+                //Console.WriteLine("Hi Abdul");
+                Console.WriteLine(@"
+ __      __       .__                               
+/  \    /  \ ____ |  |   ____  ____   _____   ____  
+\   \/\/   // __ \|  | _/ ___\/  _ \ /     \_/ __ \ 
+ \        /\  ___/|  |_\  \__(  <_> )  Y Y  \  ___/ 
+  \__/\  /  \___  >____/\___  >____/|__|_|  /\___  >
+       \/       \/          \/            \/     \/ 
+
+");
+                Console.WriteLine($"Welcome Back {name}");
+                Console.WriteLine("");
                 Console.WriteLine("0 - LogOut");
                 Console.WriteLine("1 - Education");
                 Console.WriteLine("2 - Skills");
@@ -24,6 +35,15 @@ namespace UserProfile
                 switch (num)
                 {
                     case 0:
+                        Console.WriteLine(@"
+   __    __  __________                  __________                   __    __    
+  / /   / /  \______   \ ___.__.  ____   \______   \ ___.__.  ____    \ \   \ \   
+ / /   / /    |    |  _/<   |  |_/ __ \   |    |  _/<   |  |_/ __ \    \ \   \ \  
+ \ \   \ \    |    |   \ \___  |\  ___/   |    |   \ \___  |\  ___/    / /   / /  
+  \_\   \_\   |______  / / ____| \___  >  |______  / / ____| \___  >  /_/   /_/   
+                     \/  \/          \/          \/  \/          \/               
+
+");
                         runner = false;
                         break;
                     case 1:
@@ -44,6 +64,14 @@ namespace UserProfile
                         break;
                     case 5:
                         Console.WriteLine("My Profile");
+
+                        MyProfile mp = new MyProfile();
+                        mp.MyProfile1(usid);
+                        mp.MyProfileEdu(usid);
+                        mp.MyProfileExperience(usid);
+                        mp.MyProfileSkills(usid);
+                        mp.MyProfileCertification(usid);
+                        Console.ReadLine();
                         break;
 
                 }

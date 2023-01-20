@@ -6,9 +6,11 @@ namespace trainer
     public class LoginPage
     {
         public int IsUserId;
+        public string UserName;
         SqlHandle sq = new SqlHandle();
         private string emailid;
         private string password;
+
 
         public string EmailId
         {
@@ -35,8 +37,19 @@ namespace trainer
         }
         public void LoginPageSubmission()
         {
-            int reader = sq.SqlQueryWriter($"SELECT * FROM pro.[user] WHERE email_id = '{this.emailid}' and password = '{this.password}';");
-            IsUserId = reader;
+            try
+            {
+                int reader = sq.SqlQueryWriter($"SELECT * FROM pro.[user] WHERE email_id = '{this.emailid}' and password = '{this.password}';");
+                IsUserId = reader;
+
+                string reader1 = sq.SqlQueryWriterName($"SELECT * FROM pro.[user] WHERE email_id = '{this.emailid}' and password = '{this.password}';");
+                UserName = reader1;
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine("Some error occured due to wrong input for login");
+            }
+
             //Console.WriteLine(reader);
             //while (reader.Read())
             //{
