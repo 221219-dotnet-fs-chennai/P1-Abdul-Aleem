@@ -1,3 +1,4 @@
+CREATE DATABASE abdul;
 CREATE SCHEMA pro;
 
 -- skills table start
@@ -135,7 +136,7 @@ CREATE TABLE pro.[user](
     last_name VARCHAR(100) NOT NULL,
     email_id VARCHAR(100) NOT NULL,
     [password] VARCHAR(20) NOT NULL,
-    phone_no int NOT NULL,
+    phone_no bigint NOT NULL,
     PRIMARY KEY(user_id)
 );
     -- sk_id int,
@@ -178,7 +179,7 @@ SELECT * From pro.[cert];
 -- insertion of values
 
 INSERT into pro.[user](first_name,last_name,email_id,[password],phone_no)
-VALUES('Abdul','Aleem','abdulaleem@gmail.com','12345678','735866011');
+VALUES('Abdul','Aleem','abdulaleem@gmail.com','12345678','7358660113');
 
 INSERT into pro.[user](first_name,last_name,email_id,[password],phone_no)
 VALUES('Vishwa','K','VishvaK@gmail.com','12345678','7358660111');

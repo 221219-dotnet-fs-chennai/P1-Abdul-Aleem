@@ -13,11 +13,13 @@ namespace UserProfile
             bool runner = true;
             while (runner)
             {
+                Console.WriteLine("");
                 Console.WriteLine("0 - Back");
                 Console.WriteLine("1. Add Skills");
                 Console.WriteLine("2. Update Skills");
                 Console.WriteLine("3. Delete Skills");
                 Console.WriteLine("4. View All Skills");
+                Console.WriteLine("");
 
                 int choice = Convert.ToInt32(Console.ReadLine());
 

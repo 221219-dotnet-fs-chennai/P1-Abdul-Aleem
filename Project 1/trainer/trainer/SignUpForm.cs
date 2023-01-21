@@ -1,14 +1,20 @@
 ﻿using System;
+using datahandle;
 namespace trainer
 {
     public class SignUpForm
     {
+
         public SignUpForm()
         {
+
             SignUpPage sg = new SignUpPage();
+            Logging lg = new Logging();
             bool run = true;
             while (run)
             {
+                //Console.Clear();
+
                 Console.WriteLine("----SignUp----");
                 Console.WriteLine("1 - First Name {0}", sg.FirstName);
                 Console.WriteLine("2 - Last Name {0}", sg.LastName);
@@ -22,6 +28,7 @@ namespace trainer
                 switch (choice)
                 {
                     case 0:
+                        //Console.Clear();
                         run = false;
                         break;
                     case 1:
@@ -43,7 +50,15 @@ namespace trainer
                         break;
                     case 5:
                         Console.WriteLine("Enter Your Phone No");
-                        sg.PhoneNo = Convert.ToInt32(Console.ReadLine());
+                        try
+                        {
+                            sg.PhoneNo = Convert.ToInt32(Console.ReadLine());
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine("Enter a valid number");
+                            lg.ErrorWriter(e);
+                        }
                         break;
                     case 6:
                         Console.WriteLine("Sbmitting....");

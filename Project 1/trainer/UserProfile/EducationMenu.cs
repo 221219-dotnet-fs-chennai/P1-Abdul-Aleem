@@ -74,7 +74,7 @@ namespace UserProfile
 
             SqlHandle sq = new SqlHandle();
             string skill_name = sq.SqlQueryWriterSkill($"INSERT INTO pro.edu(institution_name,course_name,[start_date],[end_date],cgpa,us_id) VALUES('{EduName}','{EduCourse}','{EduStartDate}','{EduEndDate}','{EduCgpa}',{usid});");
-            skill_name = sq.SqlQueryWriterSkill($"SELECT * from pro.skills;");
+            skill_name = sq.SqlQueryWriterSkill($"SELECT * from pro.edu;");
             //Console.WriteLine(skill_no);
             if (skill_name == EduName)
             {

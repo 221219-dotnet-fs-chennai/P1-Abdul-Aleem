@@ -1,5 +1,6 @@
 ﻿using System;
 using UserProfile;
+using datahandle;
 namespace trainer
 {
     public class LoginForm
@@ -8,9 +9,16 @@ namespace trainer
         {
             LoginPage lg = new LoginPage();
             bool runner = true;
-
+            Console.WriteLine(@"
+ __     __    ___   __   __ _ 
+(  )   /  \  / __) (  ) (  ( \
+/ (_/\(  O )( (_ \  )(  /    /
+\____/ \__/  \___/ (__) \_)__)
+        ");
             while (runner)
             {
+                //Console.Clear();
+
                 string IsLoggedIn = (lg.IsUserId > 0) ? "Your Logged In" : "";
                 Console.WriteLine("Welcome To Login Page");
                 Console.WriteLine("0 - Back");
@@ -22,7 +30,12 @@ namespace trainer
                 if (IsLoggedIn == "Your Logged In")
                 {
                     UserCreationMenu uc = new UserCreationMenu(lg.IsUserId, lg.UserName);
+                    Logging log = new Logging();
+                    log.InformationWriter($"LogIn done by user - {lg.EmailId}");
+
+
                     runner = false;
+
                 }
 
                 else
@@ -33,6 +46,7 @@ namespace trainer
                     switch (choice)
                     {
                         case 0:
+                            Console.Clear();
                             runner = false;
                             break;
                         case 1:

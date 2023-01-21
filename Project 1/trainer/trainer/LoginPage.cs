@@ -8,6 +8,7 @@ namespace trainer
         public int IsUserId;
         public string UserName;
         SqlHandle sq = new SqlHandle();
+        Logging lg = new Logging();
         private string emailid;
         private string password;
 
@@ -44,9 +45,11 @@ namespace trainer
 
                 string reader1 = sq.SqlQueryWriterName($"SELECT * FROM pro.[user] WHERE email_id = '{this.emailid}' and password = '{this.password}';");
                 UserName = reader1;
+                Console.Clear();
             }
             catch (SqlException e)
             {
+                lg.ErrorWriter(e);
                 Console.WriteLine("Some error occured due to wrong input for login");
             }
 

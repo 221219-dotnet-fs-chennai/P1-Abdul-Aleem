@@ -1,4 +1,5 @@
 ﻿using System;
+using datahandle;
 
 namespace UserProfile
 {
@@ -29,6 +30,9 @@ namespace UserProfile
                 Console.WriteLine("3 - Experience");
                 Console.WriteLine("4 - Certification");
                 Console.WriteLine("5 - My Profile");
+                Console.WriteLine("");
+
+
 
                 int num = Convert.ToInt32(Console.ReadLine());
 
@@ -44,6 +48,10 @@ namespace UserProfile
                      \/  \/          \/          \/  \/          \/               
 
 ");
+                        Logging lg = new Logging();
+
+                        lg.InformationWriter($"user Logged ");
+
                         runner = false;
                         break;
                     case 1:

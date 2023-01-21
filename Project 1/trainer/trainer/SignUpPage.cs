@@ -8,10 +8,11 @@ namespace trainer
     public class SignUpPage
 
     {
+
         Regex regemail = new Regex(@"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$");
         Regex regpass = new Regex(@"^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$");
         SqlHandle sq = new SqlHandle();
-
+        Logging lg = new Logging();
 
 
 
@@ -67,7 +68,11 @@ namespace trainer
                 }
                 else
                 {
-                    Console.WriteLine("Enter a valid email");
+                    Console.WriteLine(@"
+|---------------------|
+| Enter a valid email |
+|---------------------|
+");
                 }
                 //else
                 //{
@@ -93,7 +98,13 @@ namespace trainer
                 }
                 else
                 {
+                    Console.WriteLine(@"
+|-------------------------|
+| Enter a Strong password |
+|-------------------------|
+");
                     Console.WriteLine("1.Password must contain min 8 letter \n2.Must contain min 1 capital letter \n3.Must contain atleast 1 small letter");
+                    Console.WriteLine("");
                 }
             }
             get
@@ -115,12 +126,30 @@ namespace trainer
             }
         }
 
+        public SignUpPage()
+        {
+            Console.WriteLine(@"
+ ____   __    ___  __ _        _  _  ____ 
+/ ___) (  )  / __)(  ( \      / )( \(  _ \
+\___ \  )(  ( (_ \/    /      ) \/ ( ) __/
+(____/ (__)  \___/\_)__)      \____/(__) 
+");
+        }
 
 
         public void SignUpPageSubmission()
         {
-            int reader = sq.SqlQueryWriter($"INSERT into pro.[user](first_name,last_name,email_id,[password],phone_no) VALUES('{this.firstname}','{this.lastname}','{this.emailid}','{this.password}','{this.phoneno}');");
-            Console.WriteLine(reader);
+            try
+            {
+                int reader = sq.SqlQueryWriter($"INSERT into pro.[user](first_name,last_name,email_id,[password],phone_no) VALUES('{this.firstname}','{this.lastname}','{this.emailid}','{this.password}','{this.phoneno}');");
+                //Console.WriteLine(reader);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Some error occured during signup");
+                lg.ErrorWriter(e);
+
+            }
             //while (reader.Read())
             //{
 

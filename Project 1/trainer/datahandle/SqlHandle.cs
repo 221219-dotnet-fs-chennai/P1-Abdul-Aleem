@@ -9,6 +9,7 @@ namespace datahandle
     {
         //private string connection = null;
         private string Connection = File.ReadAllText(@"/Users/abdulaleem/Documents/Project Dev/01/conf.txt");
+
         public int UserId;
         public string SkillName;
         public string UserNameLogin;
@@ -40,7 +41,10 @@ namespace datahandle
 
         public int SqlQueryWriter(string q)
         {
+
             using SqlConnection con = new SqlConnection(Connection);
+
+
 
             con.Open();
             //Console.WriteLine(q);
@@ -86,7 +90,7 @@ namespace datahandle
             using SqlConnection con = new SqlConnection(Connection);
 
             con.Open();
-            Console.WriteLine(q);
+            //Console.WriteLine(q);
             SqlCommand cmd = new SqlCommand(q, con);
             using SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
@@ -108,7 +112,7 @@ namespace datahandle
             using SqlConnection con = new SqlConnection(Connection);
 
             con.Open();
-            Console.WriteLine(q);
+            //Console.WriteLine(q);
             SqlCommand cmd = new SqlCommand(q, con);
             //SqlDataAdapter reader = cmd.ExecuteReader();
             DataTable dt = new DataTable();
