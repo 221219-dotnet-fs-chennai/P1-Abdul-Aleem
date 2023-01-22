@@ -20,12 +20,16 @@ namespace trainer
                 //Console.Clear();
 
                 string IsLoggedIn = (lg.IsUserId > 0) ? "Your Logged In" : "";
+                Console.WriteLine("");
+
                 Console.WriteLine("Welcome To Login Page");
                 Console.WriteLine("0 - Back");
                 Console.WriteLine("1 - Email ID {0}", lg.EmailId);
                 Console.WriteLine("2 - Password {0}", lg.Password);
                 Console.WriteLine("3 - Submit");
                 Console.WriteLine(IsLoggedIn);
+                Console.WriteLine("");
+
 
                 if (IsLoggedIn == "Your Logged In")
                 {
@@ -63,6 +67,9 @@ namespace trainer
                             Console.WriteLine("Submited");
                             break;
 
+                        default:
+                            Console.WriteLine("Please enter a valid input");
+                            break;
 
                     }
                 }

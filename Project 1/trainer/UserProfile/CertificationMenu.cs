@@ -13,11 +13,15 @@ namespace UserProfile
             bool runner = true;
             while (runner)
             {
+                Console.WriteLine("");
+
                 Console.WriteLine("0 - Back");
                 Console.WriteLine("1. Add Certification");
                 Console.WriteLine("2. Update Certification");
                 Console.WriteLine("3. Delete Certification");
                 Console.WriteLine("4. View All Certification");
+                Console.WriteLine("");
+
 
                 int choice = Convert.ToInt32(Console.ReadLine());
 
@@ -95,6 +99,8 @@ namespace UserProfile
             DataTable reader = sq.SqlQeryWriterSkillUpdate($"select k.cert_id,k.certification_name,k.acquired_from,k.cert_licence from pro.cert as k WHERE k.us_id = {usid};");
             //Console.WriteLine(reader);
             Console.WriteLine("CertificationID    CertificationName   Organization CertificateLicence ");
+            Console.WriteLine("");
+
             foreach (DataRow dataRow in reader.Rows)
             {
                 foreach (var item in dataRow.ItemArray)
@@ -103,6 +109,7 @@ namespace UserProfile
                 }
                 Console.WriteLine("");
             }
+            Console.WriteLine("");
 
             Console.WriteLine("Enter the Certification Id to update");
             int res = Convert.ToInt32(Console.ReadLine());
@@ -133,6 +140,8 @@ namespace UserProfile
             DataTable reader = sq.SqlQeryWriterSkillUpdate($"select k.cert_id,k.certification_name,k.acquired_from,k.cert_licence from pro.cert as k WHERE k.us_id = {usid};");
             //Console.WriteLine(reader);
             Console.WriteLine("CertificationID    CertificationName   Organization CertificateLicence ");
+            Console.WriteLine("");
+
             foreach (DataRow dataRow in reader.Rows)
             {
                 foreach (var item in dataRow.ItemArray)
@@ -141,7 +150,9 @@ namespace UserProfile
                 }
                 Console.WriteLine("");
             }
-            Console.WriteLine("Enter the CompanyId you want to delete");
+            Console.WriteLine("");
+
+            Console.WriteLine("Enter the CertificationID you want to delete");
             int skill_id = Convert.ToInt32(Console.ReadLine());
             sq.sqlQueryDelete($"DELETE FROM pro.cert WHERE cert_id ={skill_id}");
             Console.WriteLine("Deleted SuccessFully");
@@ -161,6 +172,8 @@ namespace UserProfile
             DataTable reader = sq.SqlQeryWriterSkillUpdate($"select k.cert_id,k.certification_name,k.acquired_from,k.cert_licence from pro.cert as k WHERE k.us_id = {usid};");
             //Console.WriteLine(reader);
             Console.WriteLine("CertificationID    CertificationName   Organization CertificateLicence ");
+            Console.WriteLine("");
+
             foreach (DataRow dataRow in reader.Rows)
             {
                 foreach (var item in dataRow.ItemArray)
@@ -169,6 +182,8 @@ namespace UserProfile
                 }
                 Console.WriteLine("");
             }
+            Console.WriteLine("");
+
         }
     }
 }

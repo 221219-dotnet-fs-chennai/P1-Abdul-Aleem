@@ -11,11 +11,15 @@ namespace UserProfile
             bool runner = true;
             while (runner)
             {
+                Console.WriteLine("");
+
                 Console.WriteLine("0 - Back");
                 Console.WriteLine("1. Add Company");
                 Console.WriteLine("2. Update Company");
                 Console.WriteLine("3. Delete Company");
                 Console.WriteLine("4. View All Company Details");
+                Console.WriteLine("");
+
 
                 int choice = Convert.ToInt32(Console.ReadLine());
 
@@ -75,11 +79,11 @@ namespace UserProfile
             //Console.WriteLine(skill_no);
             if (skill_name == CompAbout)
             {
-                Console.WriteLine("Skill Added Successfully");
+                Console.WriteLine("Experience Added Successfully");
             }
             else
             {
-                Console.WriteLine("Skill unable to add");
+                Console.WriteLine("Experience unable to add");
             }
 
         }
@@ -94,6 +98,8 @@ namespace UserProfile
             DataTable reader = sq.SqlQeryWriterSkillUpdate($"select k.comp_id,k.comp_name,k.about,k.start_date,k.end_date from pro.comp as k WHERE k.us_id = {usid};");
             //Console.WriteLine(reader);
             Console.WriteLine("CompanyId    CompanyName   JobRole   StartDate    EndDate ");
+            Console.WriteLine("");
+
             foreach (DataRow dataRow in reader.Rows)
             {
                 foreach (var item in dataRow.ItemArray)
@@ -102,9 +108,12 @@ namespace UserProfile
                 }
                 Console.WriteLine("");
             }
+            Console.WriteLine("");
 
             Console.WriteLine("Enter the CompanyId to update");
+
             int res = Convert.ToInt32(Console.ReadLine());
+
             Console.WriteLine("Enter the Company Name to Update");
             string resname = Console.ReadLine();
             Console.WriteLine("Enter Your Job Role");
@@ -121,7 +130,7 @@ namespace UserProfile
             //SET skill_name = 'helloworld', skill_experience = 21
             //WHERE skill_id = 12;
 
-            sq.sqlQueryDelete($"UPDATE pro.comp SET about = '{resabout}', comp_name = '{resname}', start_date = '{resstart}', end_date = '{resend}' WHERE skill_id = {res};");
+            sq.sqlQueryDelete($"UPDATE pro.comp SET about = '{resabout}', comp_name = '{resname}', start_date = '{resstart}', end_date = '{resend}' WHERE comp_id = {res};");
             Console.WriteLine("Update Success");
 
 
@@ -138,6 +147,8 @@ namespace UserProfile
             DataTable reader = sq.SqlQeryWriterSkillUpdate($"select k.comp_id,k.comp_name,k.about,k.start_date,k.end_date from pro.comp as k WHERE k.us_id = {usid};");
             //Console.WriteLine(reader);
             Console.WriteLine("CompanyId    CompanyName   JobRole  StartDate EndDate ");
+            Console.WriteLine("");
+
             foreach (DataRow dataRow in reader.Rows)
             {
                 foreach (var item in dataRow.ItemArray)
@@ -146,6 +157,7 @@ namespace UserProfile
                 }
                 Console.WriteLine("");
             }
+            Console.WriteLine("");
 
             Console.WriteLine("Enter the CompanyId you want to delete");
             int skill_id = Convert.ToInt32(Console.ReadLine());
@@ -165,6 +177,8 @@ namespace UserProfile
             DataTable reader = sq.SqlQeryWriterSkillUpdate($"select k.comp_id,k.comp_name,k.about,k.start_date,k.end_date from pro.comp as k WHERE k.us_id = {usid};");
             //Console.WriteLine(reader);
             Console.WriteLine("CompanyId    CompanyName   JobRole  StartDate  EndDate ");
+            Console.WriteLine("");
+
             foreach (DataRow dataRow in reader.Rows)
             {
                 foreach (var item in dataRow.ItemArray)
@@ -173,6 +187,8 @@ namespace UserProfile
                 }
                 Console.WriteLine("");
             }
+            Console.WriteLine("");
+
 
         }
     }

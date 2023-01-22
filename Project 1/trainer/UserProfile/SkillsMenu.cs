@@ -77,7 +77,10 @@ namespace UserProfile
             //Console.WriteLine(skill_no);
             if (skill_name == SkillName)
             {
+                Console.WriteLine("");
                 Console.WriteLine("Skill Added Successfully");
+                Console.WriteLine("");
+
             }
             else
             {
@@ -104,6 +107,8 @@ namespace UserProfile
             DataTable reader = sq.SqlQeryWriterSkillUpdate($"select k.skill_id,k.skill_name,k.skill_experience from pro.Skills as k WHERE k.us_id = {usid};");
             //Console.WriteLine(reader);
             Console.WriteLine("SkillID    SkillName   SkillExperience");
+            Console.WriteLine("");
+
             foreach (DataRow dataRow in reader.Rows)
             {
                 foreach (var item in dataRow.ItemArray)
@@ -145,7 +150,9 @@ namespace UserProfile
 
             DataTable reader = sq.SqlQeryWriterSkillUpdate($"select k.skill_id,k.skill_name,k.skill_experience from pro.Skills as k WHERE k.us_id = {usid};");
             //Console.WriteLine(reader);
-            Console.WriteLine("SkillID    SkillName   SkillExperience");
+            Console.WriteLine("SkillID     SkillName     SkillExperience");
+            Console.WriteLine("");
+
             foreach (DataRow dataRow in reader.Rows)
             {
                 foreach (var item in dataRow.ItemArray)
@@ -154,6 +161,8 @@ namespace UserProfile
                 }
                 Console.WriteLine("");
             }
+            Console.WriteLine("");
+
             Console.WriteLine("Enter the SkillId you want to delete");
             int skill_id = Convert.ToInt32(Console.ReadLine());
             sq.sqlQueryDelete($"DELETE FROM pro.skills WHERE skill_id ={skill_id}");
@@ -170,6 +179,8 @@ namespace UserProfile
 
             DataTable reader = sq.SqlQeryWriterSkillUpdate($"select k.skill_id,k.skill_name,k.skill_experience from pro.Skills as k WHERE k.us_id = {usid};");
             //Console.WriteLine(reader);
+            Console.WriteLine("");
+
             Console.WriteLine("SkillID    SkillName   SkillExperience");
             foreach (DataRow dataRow in reader.Rows)
             {
@@ -179,6 +190,8 @@ namespace UserProfile
                 }
                 Console.WriteLine("");
             }
+            Console.WriteLine("");
+
         }
     }
 

@@ -14,8 +14,11 @@ namespace trainer
             while (run)
             {
                 //Console.Clear();
+                Console.WriteLine("");
 
                 Console.WriteLine("----SignUp----");
+                Console.WriteLine("");
+
                 Console.WriteLine("1 - First Name {0}", sg.FirstName);
                 Console.WriteLine("2 - Last Name {0}", sg.LastName);
                 Console.WriteLine("3 - Email Id {0}", sg.EmailId);
@@ -23,6 +26,8 @@ namespace trainer
                 Console.WriteLine("5 - Phone No {0}", sg.PhoneNo);
                 Console.WriteLine("6 - Submit");
                 Console.WriteLine("0 - Back");
+                Console.WriteLine("");
+
                 Console.WriteLine("Enter Your Value :");
                 int choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
@@ -64,6 +69,9 @@ namespace trainer
                         Console.WriteLine("Sbmitting....");
                         sg.SignUpPageSubmission();
                         Console.WriteLine("Submitted Successfully");
+                        break;
+                    default:
+                        Console.WriteLine("Please enter a valid input");
                         break;
                 }
             }

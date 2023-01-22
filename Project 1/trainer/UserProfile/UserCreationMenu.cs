@@ -50,7 +50,7 @@ namespace UserProfile
 ");
                         Logging lg = new Logging();
 
-                        lg.InformationWriter($"user Logged ");
+                        lg.InformationWriter($"user Logged Out");
 
                         runner = false;
                         break;
@@ -81,7 +81,9 @@ namespace UserProfile
                         mp.MyProfileCertification(usid);
                         Console.ReadLine();
                         break;
-
+                    default:
+                        Console.WriteLine("Please enter a valid input");
+                        break;
                 }
             }
 

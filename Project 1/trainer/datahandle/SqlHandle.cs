@@ -39,10 +39,16 @@ namespace datahandle
 
         //}
 
+        /// <summary>
+        /// This method is used to fetch information from DB.Pass the query as a parameter to the method.
+        /// </summary>
+        /// <param name="q"></param>
+        /// <returns>UserId as an integer.</returns>
         public int SqlQueryWriter(string q)
         {
 
             using SqlConnection con = new SqlConnection(Connection);
+
 
 
 
@@ -63,6 +69,11 @@ namespace datahandle
             return UserId;
         }
 
+        /// <summary>
+        /// This method is used to fetch information from DB.Pass the query as a parameter to the method
+        /// </summary>
+        /// <param name="q"></param>
+        /// <returns>UserName from the given query as String</returns>
         public string SqlQueryWriterName(string q)
         {
             using SqlConnection con = new SqlConnection(Connection);
@@ -85,6 +96,11 @@ namespace datahandle
 
         }
 
+        /// <summary>
+        /// Used To fetch last string value in the 1st coloumn for validation
+        /// </summary>
+        /// <param name="q"></param>
+        /// <returns>Last value of 2nd coloumn in String</returns>
         public string SqlQueryWriterSkill(string q)
         {
             using SqlConnection con = new SqlConnection(Connection);
@@ -107,6 +123,11 @@ namespace datahandle
             return SkillName;
         }
 
+        /// <summary>
+        /// Used to fetch all the information in the query. Uses disconnected architecture.
+        /// </summary>
+        /// <param name="q"></param>
+        /// <returns>DataTable</returns>
         public DataTable SqlQeryWriterSkillUpdate(string q)
         {
             using SqlConnection con = new SqlConnection(Connection);

@@ -33,8 +33,9 @@ namespace trainer
             switch (inp)
             {
                 case 0:
-                    Console.WriteLine("Exit...........");
                     lg.InformationWriter("---------------------------Exiting Run--------------------------------");
+
+                    Console.WriteLine("Exit...........");
                     Program.MainLoop = false;
                     break;
                 case 1:

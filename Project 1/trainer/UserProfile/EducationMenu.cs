@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data;
 using datahandle;
-
+using System.Text.RegularExpressions;
 namespace UserProfile
 {
     public class EducationMenu
@@ -11,11 +11,14 @@ namespace UserProfile
             bool runner = true;
             while (runner)
             {
+                Console.WriteLine("");
                 Console.WriteLine("0 - Back");
                 Console.WriteLine("1. Add Education");
                 Console.WriteLine("2. Update/Edit Education");
                 Console.WriteLine("3. Delete Education");
                 Console.WriteLine("4. View Education");
+                Console.WriteLine("");
+
 
                 int choice = Convert.ToInt32(Console.ReadLine());
 
@@ -54,6 +57,8 @@ namespace UserProfile
 
     public class AddEdu
     {
+        Regex regdate = new Regex(@"\d\d\d\d-(01|02|03|04|05|06|07|08|09|10|11|12)-[1|2|3]\d");
+
         public void EduAdder(int usid)
         {
             Console.WriteLine("Enter The Institution Name");
@@ -63,10 +68,49 @@ namespace UserProfile
             string EduCourse = Console.ReadLine();
 
             Console.WriteLine("Enter the start date of your course in yyyy-mm-dd format");
+
             string EduStartDate = Console.ReadLine();
+
+            if (regdate.IsMatch(EduStartDate))
+            {
+                EduStartDate = EduStartDate;
+            }
+            else
+            {
+
+                Console.WriteLine(@"
+|---------------------|
+| Enter a valid Date  |
+|---------------------|
+");
+                Console.WriteLine("Enter the start date of your course in yyyy-mm-dd format");
+                EduStartDate = Console.ReadLine();
+            }
 
             Console.WriteLine("Enter the end date of your course in yyyy-mm-dd format ");
             string EduEndDate = Console.ReadLine();
+
+
+
+            if (regdate.IsMatch(EduEndDate))
+            {
+                EduEndDate = EduEndDate;
+            }
+            else
+            {
+
+                Console.WriteLine(@"
+|---------------------|
+| Enter a valid Date  |
+|---------------------|
+");
+
+                Console.WriteLine("Enter the end date of your course in yyyy-mm-dd format ");
+                EduEndDate = Console.ReadLine();
+
+            }
+
+
 
             Console.WriteLine("Enter your CGPA acquired in the given course");
             string EduCgpa = Console.ReadLine();
@@ -104,6 +148,8 @@ namespace UserProfile
             DataTable reader = sq.SqlQeryWriterSkillUpdate($"select k.edu_id,k.institution_name,k.course_name,k.start_date,k.end_date,k.cgpa from pro.edu as k WHERE k.us_id = {usid};");
             //Console.WriteLine(reader);
             Console.WriteLine("EducationId    InstitutionName  CourseName  StarDate  EndDate  CGPA ");
+            Console.WriteLine("");
+
             foreach (DataRow dataRow in reader.Rows)
             {
                 foreach (var item in dataRow.ItemArray)
@@ -112,6 +158,8 @@ namespace UserProfile
                 }
                 Console.WriteLine("");
             }
+            Console.WriteLine("");
+
 
             Console.WriteLine("Enter the EducationId to update");
             int res = Convert.ToInt32(Console.ReadLine());
@@ -148,6 +196,8 @@ namespace UserProfile
             DataTable reader = sq.SqlQeryWriterSkillUpdate($"select k.edu_id,k.institution_name,k.course_name,k.start_date,k.end_date,k.cgpa from pro.edu as k WHERE k.us_id = {usid};");
             //Console.WriteLine(reader);
             Console.WriteLine("EducationId    InstitutionName  CourseName  StarDate  EndDate  CGPA ");
+            Console.WriteLine("");
+
             foreach (DataRow dataRow in reader.Rows)
             {
                 foreach (var item in dataRow.ItemArray)
@@ -156,6 +206,8 @@ namespace UserProfile
                 }
                 Console.WriteLine("");
             }
+            Console.WriteLine("");
+
             Console.WriteLine("Enter the EducationId you want to delete");
             int skill_id = Convert.ToInt32(Console.ReadLine());
             sq.sqlQueryDelete($"DELETE FROM pro.edu WHERE edu_id ={skill_id}");
@@ -172,7 +224,9 @@ namespace UserProfile
             SqlHandle sq = new SqlHandle();
             DataTable reader = sq.SqlQeryWriterSkillUpdate($"select k.edu_id,k.institution_name,k.course_name,k.start_date,k.end_date,k.cgpa from pro.edu as k WHERE k.us_id = {usid};");
             //Console.WriteLine(reader);
-            Console.WriteLine("EducationId    InstitutionName  CourseName  StarDate  EndDate  CGPA ");
+            Console.WriteLine("EducationId     InstitutionName     CourseName     StarDate     EndDate    CGPA ");
+            Console.WriteLine("");
+
             foreach (DataRow dataRow in reader.Rows)
             {
                 foreach (var item in dataRow.ItemArray)
@@ -181,6 +235,8 @@ namespace UserProfile
                 }
                 Console.WriteLine("");
             }
+            Console.WriteLine("");
+
         }
     }
 }
