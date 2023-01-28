@@ -38,7 +38,7 @@ namespace trainer
                         break;
                     case 1:
                         Console.WriteLine("SignUp");
-
+                        SignUpPage sg = new SignUpPage();
                         break;
                     case 2:
                         Console.WriteLine("Login");

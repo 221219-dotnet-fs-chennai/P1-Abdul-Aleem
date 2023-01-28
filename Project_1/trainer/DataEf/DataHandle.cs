@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 
+
 namespace DataEf
 {
 
@@ -43,6 +44,32 @@ namespace DataEf
             }
 
             return new LoginClass(id, name);
+        }
+
+        public void DataHandleSignUp(string fname, string lname, string email, string pass, Int64 phone)
+        {
+            Entities.AbdulContext cnt = new Entities.AbdulContext();
+            Entities.User user = new Entities.User();
+
+            user.FirstName = fname;
+            user.LastName = lname;
+            user.EmailId = email;
+            user.Password = pass;
+            user.PhoneNo = phone;
+
+            cnt.Users.Add(user);
+
+            int i = cnt.SaveChanges();
+
+            if (i > 0)
+            {
+                Console.WriteLine("User created success fully");
+            }
+            else
+            {
+                Console.WriteLine("Unable to create user");
+            }
+
         }
     }
 
