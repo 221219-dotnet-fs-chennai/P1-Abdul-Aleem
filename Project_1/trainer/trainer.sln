@@ -5,7 +5,7 @@ VisualStudioVersion = 25.0.1704.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataEf", "DataEf\DataEf.csproj", "{1288D220-A9EC-4D1F-986C-FE7AC4FC4D32}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MainPage", "MainPage\MainPage.csproj", "{408283B7-D00E-4D7F-BFE4-45B1277F3ABF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "trainer", "MainPage\trainer.csproj", "{408283B7-D00E-4D7F-BFE4-45B1277F3ABF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

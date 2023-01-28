@@ -1,7 +1,7 @@
 ﻿using System;
 using DataEf;
 
-namespace MainPage
+namespace trainer
 {
     public class LoginPage
     {

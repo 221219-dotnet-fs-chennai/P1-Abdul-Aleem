@@ -1,4 +1,4 @@
-﻿namespace MainPage
+﻿namespace trainer
 {
     public class Program
     {
