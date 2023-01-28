@@ -16,8 +16,8 @@
     <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\form\form.csproj" />
     <ProjectReference Include="..\datahandle\datahandle.csproj" />
     <ProjectReference Include="..\UserProfile\UserProfile.csproj" />
+    <ProjectReference Include="..\DataEf\DataEf.csproj" />
   </ItemGroup>
 </Project>

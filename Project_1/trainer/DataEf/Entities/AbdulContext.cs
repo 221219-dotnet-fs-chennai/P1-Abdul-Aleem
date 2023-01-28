@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
-
 namespace DataEf.Entities;
 
 public partial class AbdulContext : DbContext

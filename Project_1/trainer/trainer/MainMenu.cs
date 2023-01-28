@@ -4,6 +4,7 @@ using datahandle;
 using System.Data.SqlClient;
 using System.Data;
 using UserProfile;
+using DataEf;
 
 
 namespace trainer
@@ -52,24 +53,9 @@ namespace trainer
                     //Program.MainLoop = false;
                     break;
                 case 3:
-                    //MyProfile mp = new MyProfile();
-                    //mp.MyProfile1(2);
-                    //mp.MyProfileEdu(2);
-                    //mp.MyProfileExperience(2);
-                    //mp.MyProfileSkills(2);
-                    //mp.MyProfileCertification(2);
-                    //SqlHandle ss = new SqlHandle();
+                    Class1 cs = new Class1();
 
-                    //try
-                    //{
 
-                    //    int k = ss.SqlQueryWriter(@"select * from ");
-                    //}
-
-                    //catch (SqlException e)
-                    //{
-                    //    Console.WriteLine("Some error occured");
-                    //}
 
                     break;
 
