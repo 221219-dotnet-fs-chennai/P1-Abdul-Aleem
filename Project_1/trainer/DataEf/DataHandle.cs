@@ -71,7 +71,65 @@ namespace DataEf
             }
 
         }
+
+        //Adding
+        public void UserProfileAdd(DataEf.Entities.Edu ed)
+        {
+            Entities.AbdulContext cnt = new Entities.AbdulContext();
+            Entities.Edu edu = new Entities.Edu();
+            cnt.Edus.Add(ed);
+            int j = cnt.SaveChanges();
+
+            if (j > 0)
+            {
+                Console.WriteLine("Education Added Sucessfully");
+            }
+            else
+            {
+                Console.WriteLine("Unable to add");
+            }
+        }
+
+        public void UserProfileAdd(DataEf.Entities.Comp cp)
+        {
+            Entities.AbdulContext cnt = new Entities.AbdulContext();
+            Entities.Comp cert = new Entities.Comp();
+            cnt.Comps.Add(cp);
+            int j = cnt.SaveChanges();
+            if (j > 0)
+            {
+                Console.WriteLine("Experience Added sucessfully");
+            }
+            else
+            {
+                Console.WriteLine("Unable to add");
+            }
+
+        }
+
+        //Update
+        public void UserProfileUpdate(DataEf.Entities.Edu edu)
+        {
+            Entities.AbdulContext cnt = new Entities.AbdulContext();
+            Entities.Edu edu1 = new Entities.Edu();
+            cnt.Edus.Update(edu);
+            int j = cnt.SaveChanges();
+            if (j > 0)
+            {
+                Console.WriteLine("Education updated successfully");
+            }
+            else
+            {
+                Console.WriteLine("Unable to update");
+            }
+
+        }
+
+
     }
 
+
 }
+
+
 

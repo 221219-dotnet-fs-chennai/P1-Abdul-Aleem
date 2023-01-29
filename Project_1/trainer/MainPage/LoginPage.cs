@@ -1,6 +1,6 @@
 ﻿using System;
 using DataEf;
-
+using UserProfile;
 namespace trainer
 {
     public class LoginPage
@@ -50,6 +50,8 @@ namespace trainer
                         {
                             Console.WriteLine(lgdetails.Id);
                             Console.WriteLine("Logged In SuccessFully");
+                            UserMenu us = new UserMenu(lgdetails.Id);
+
                         }
                         else
                         {
