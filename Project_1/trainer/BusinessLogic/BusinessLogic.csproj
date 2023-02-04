@@ -8,5 +8,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DataEf\DataEf.csproj" />
+    <ProjectReference Include="..\Models\Models.csproj" />
   </ItemGroup>
 </Project>

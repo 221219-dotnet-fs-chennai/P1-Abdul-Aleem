@@ -3,9 +3,9 @@
 
 namespace Models
 {
-    public class User
+    public class UserModel
     {
-        public int UserId { get; set; }
+        //public int UserId { get; set; }
 
         public string FirstName { get; set; }
 
