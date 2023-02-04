@@ -32,7 +32,7 @@ namespace UserProfile
                     Update(id);
                     break;
                 case 3:
-                    Delete();
+                    //Delete();
                     break;
                 case 4:
                     View();
@@ -119,7 +119,24 @@ namespace UserProfile
 
 
         }
-        public void Delete() { }
+        public void Delete(int id)
+        {
+            DataEf.Entities.AbdulContext cnt = new DataEf.Entities.AbdulContext();
+            var query = from st in cnt.Edus
+                        where st.UsId == id
+                        select st;
+
+
+            foreach (var q in query)
+            {
+                Console.WriteLine($"Edu ID - {q.EduId}, Institution - {q.InstitutionName}, Course - {q.CourseName}, StartDate - {q.StartDate}, EndDate - {q.EndDate}, Cgpa - {q.Cgpa} ");
+            }
+
+            Console.WriteLine("Enter the Education Id you want to delete :");
+            int dnum = Convert.ToInt32(Console.ReadLine());
+
+
+        }
         public void View() { }
     }
 }

@@ -5,7 +5,7 @@ namespace UserProfile
     {
         public void Add(int id);
         public void Update(int id);
-        public void Delete();
+        public void Delete(int id);
         public void View();
     }
 }
