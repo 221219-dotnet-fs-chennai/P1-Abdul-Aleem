@@ -40,22 +40,22 @@ public class WeatherForecastController : ControllerBase
         return arr;
     }
 
-    [HttpPost("Login")]
-    public IActionResult post([FromBody] LoginClass loginClass)
-    {
-        Login login = new Login();
+    //[HttpPost("Login")]
+    //public IActionResult post([FromBody] LoginClass loginClass)
+    //{
+    //    Login login = new Login();
 
-        bool res = login.LoginSubmit(loginClass.EmailID, loginClass.Password);
+    //    bool res = login.LoginSubmit(loginClass.EmailID, loginClass.Password);
 
-        if (res)
-        {
-            return Ok();
-        }
-        else
-        {
-            return NotFound();
-        }
-    }
+    //    if (res)
+    //    {
+    //        return Ok();
+    //    }
+    //    else
+    //    {
+    //        return NotFound();
+    //    }
+    //}
 
 }
 

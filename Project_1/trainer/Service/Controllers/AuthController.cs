@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Threading.Tasks;
 using BusinessLogic;
 using Microsoft.AspNetCore.Mvc;
 using Models;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Service.Controllers
 {
@@ -14,38 +14,26 @@ namespace Service.Controllers
     [Route("api/[controller]")]
     public class AuthController : Controller
     {
-        private string? authId;
-        public string AuthId
-        {
-            set
-            {
-                authId = value;
-            }
-            get
-            {
-                if (authId == null)
-                {
-                    return "AuthFail";
-                }
-                else
-                {
-                    return authId;
-                }
-            }
-        }
+        //For saving User Id
+        public static int UserIdRecieved;
+        //For saving tokens
+        public static string authId;
+        public string AuthId { get; set; }
 
         [HttpPost]
         public IActionResult post([FromBody] LoginClass loginClass)
         {
             Login login = new Login();
 
-            bool res = login.LoginSubmit(loginClass.EmailID, loginClass.Password);
-
-            if (res)
+            int res = login.LoginSubmit(loginClass.EmailID, loginClass.Password);
+            UserIdRecieved = res;
+            if (res > 0)
             {
-                string tk = TokenGenerator.TokenGeneratorToken();
-                AuthId = tk;
-                return Ok($"Token : {tk} ");
+                //string tk = TokenGenerator.TokenGeneratorToken();
+                authId = TokenGenerator.TokenGeneratorToken();
+                //AuthId = tk;
+                //authId = tk;
+                return Ok($"Token : {authId} {UserIdRecieved}");
             }
             else
             {
@@ -84,26 +72,50 @@ namespace Service.Controllers
 
         }
 
+        [HttpGet("Education")]
+        public IActionResult EducationList([FromBody] TokenClass tokenClass)
+        {
+            if (tokenClass.Token == authId)
+            {
+                EducationLogic ed = new EducationLogic();
+                var qq = ed.GetAll(UserIdRecieved);
+
+                return Ok(qq);
+            }
+            else
+            {
+                return Ok($"Wrong Token Passed");
+            }
+
+        }
+
+        [HttpPost("Education/Add")]
+        public IActionResult EducationAdd([FromBody] AEduModel aEduModel)
+        {
+            if (aEduModel.Token == authId)
+            {
+                EducationLogic education = new EducationLogic();
+                bool ql = education.Add(UserIdRecieved, aEduModel);
+
+                if (ql == true)
+                {
+                    return Created("Created Successfully", aEduModel);
+                }
+                else
+                {
+                    return Ok("Unable to Create");
+                }
+            }
+            else
+            {
+                return Ok("Wrong Token");
+            }
+        }
+
     }
 
 
 
-    /// <summary>
-    /// To generate tokens
-    /// </summary>
-    //public static class TokenGenerator
-    //{
 
-    //    public static string TokenGeneratorToken()
-    //    {
-    //        Random rnd = new Random();
-    //        string[] words = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
-
-    //        string generatedToken = $"{words[rnd.Next(0, words.Length)]}{rnd.Next(1, 10)}{words[rnd.Next(0, words.Length)]}{rnd.Next(1, 10)}{words[rnd.Next(0, words.Length)]}{words[rnd.Next(0, words.Length)]}{rnd.Next(1, 10)}{words[rnd.Next(0, words.Length)]}{rnd.Next(1, 10)}{words[rnd.Next(0, words.Length)]}{words[rnd.Next(0, words.Length)]}{rnd.Next(1, 10)}{words[rnd.Next(0, words.Length)]}{rnd.Next(1, 10)}{words[rnd.Next(0, words.Length)]}{words[rnd.Next(0, words.Length)]}";
-
-    //        return generatedToken;
-
-    //    }
-    //}
 }
 

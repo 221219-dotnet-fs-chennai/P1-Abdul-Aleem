@@ -10,7 +10,7 @@ namespace BusinessLogic;
 public class Login
 {
 
-    public bool LoginSubmit(string EmailID, string Password)
+    public int LoginSubmit(string EmailID, string Password)
     {
         int usid = 0;
         DataEf.Entities.AbdulContext abdulContext = new DataEf.Entities.AbdulContext();
@@ -25,12 +25,12 @@ public class Login
 
         if (usid > 0)
         {
-            return true;
+            return usid;
         }
 
         else
         {
-            return false;
+            return usid;
         }
     }
 
