@@ -47,5 +47,24 @@ public class AEduModel : TokenClass
     //}
 }
 
+public class UEduModel : TokenClass
+{
+
+    new public string Token { get; set; }
+
+    public int EduId { get; set; }
+
+
+    public string InstitutionName { get; set; } = null!;
+
+    public string CourseName { get; set; } = null!;
+
+    public DateTime StartDate { get; set; }
+
+    public DateTime EndDate { get; set; }
+
+    public string Cgpa { get; set; } = null!;
+}
+
 
 

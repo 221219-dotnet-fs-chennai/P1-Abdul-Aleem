@@ -112,6 +112,54 @@ namespace Service.Controllers
             }
         }
 
+        [HttpDelete("Education/Delete")]
+        public IActionResult EducationDelete([FromBody] UserIdToken userIdToken)
+        {
+            if (userIdToken.Token == authId)
+            {
+                EducationLogic education = new EducationLogic();
+                bool q = education.Delete(userIdToken.Id);
+
+                if (q == true)
+                {
+                    return Ok("Education deleted successfully");
+                }
+                else
+                {
+                    return Ok("Unable to delete");
+                }
+            }
+            else
+            {
+                return Ok("Wrong Token");
+            }
+        }
+
+        [HttpPut("Education/Update")]
+        public IActionResult EducationUpdate([FromBody] UEduModel uEduModel)
+        {
+            if (uEduModel.Token == authId)
+            {
+                EducationLogic educationLogic = new EducationLogic();
+                bool q = educationLogic.Update(UserIdRecieved, uEduModel);
+
+                if (q == true)
+                {
+                    return Ok("Updated Sucessfully");
+                }
+                else
+                {
+                    return Ok("Unable to update");
+                }
+
+
+            }
+            else
+            {
+                return Ok("Wrong Token");
+            }
+        }
+
     }
 
 

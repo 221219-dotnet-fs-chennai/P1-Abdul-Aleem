@@ -34,30 +34,6 @@ namespace BusinessLogic
         public bool Add(int id, AEduModel aEduModel)
         {
 
-            //DataEf.Entities.Edu edu = new DataEf.Entities.Edu();
-            //edu.InstitutionName = iname;
-            //edu.CourseName = cname;
-            //edu.StartDate = Convert.ToDateTime(sdate);
-            //edu.EndDate = Convert.ToDateTime(edate);
-            //edu.Cgpa = cgpa;
-            //edu.UsId = id;
-
-            //DataHandle dt = new DataHandle();
-            //dt.UserProfileAdd(edu);
-
-            //Entities.AbdulContext cnt = new Entities.AbdulContext();
-            //Entities.Edu edu = new Entities.Edu();
-            //cnt.Edus.Add(ed);
-            //int j = cnt.SaveChanges();
-
-            //if (j > 0)
-            //{
-            //    Console.WriteLine("Education Added Sucessfully");
-            //}
-            //else
-            //{
-            //    Console.WriteLine("Unable to add");
-            //}
             DataEf.Entities.Edu edu = new DataEf.Entities.Edu();
 
             edu.InstitutionName = aEduModel.InstitutionName;
@@ -79,11 +55,63 @@ namespace BusinessLogic
             {
                 return false;
             }
+        }
+
+        public bool Delete(int id)
+        {
+            DataEf.Entities.Edu edu = new DataEf.Entities.Edu() { EduId = id };
+            DataEf.Entities.AbdulContext abdulContext = new DataEf.Entities.AbdulContext();
+            abdulContext.Edus.Attach(edu);
+            abdulContext.Edus.Remove(edu);
+            int k = abdulContext.SaveChanges();
+            if (k > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool Update(int id, UEduModel uEduModel)
+        {
+            DataEf.Entities.Edu edu = new DataEf.Entities.Edu();
+            edu.EduId = uEduModel.EduId;
+            edu.CourseName = uEduModel.CourseName;
+            edu.InstitutionName = uEduModel.InstitutionName;
+            edu.StartDate = uEduModel.StartDate;
+            edu.EndDate = uEduModel.EndDate;
+            edu.Cgpa = uEduModel.Cgpa;
+            edu.UsId = id;
 
 
+            //Entities.AbdulContext cnt = new Entities.AbdulContext();
+            //Entities.Edu edu1 = new Entities.Edu();
+            //cnt.Edus.Update(edu);
+            //int j = cnt.SaveChanges();
+            //if (j > 0)
+            //{
+            //    Console.WriteLine("Education updated successfully");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Unable to update");
+            //}
 
 
+            DataEf.Entities.AbdulContext abdulContext = new DataEf.Entities.AbdulContext();
+            abdulContext.Edus.Update(edu);
+            int j = abdulContext.SaveChanges();
 
+            if (j > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
 
