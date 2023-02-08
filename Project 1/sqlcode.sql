@@ -185,7 +185,7 @@ INSERT into pro.[user](first_name,last_name,email_id,[password],phone_no)
 VALUES('Vishwa','K','VishvaK@gmail.com','12345678','7358660111');
 
 INSERT into pro.skills(skill_name,skill_experience,us_id)
-VALUES('React',20,2);
+VALUES('Python',21,1);
 
 ALTER TABLE pro.[user] ALTER COLUMN phone_no bigint;
 

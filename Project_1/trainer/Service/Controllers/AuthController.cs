@@ -160,10 +160,127 @@ namespace Service.Controllers
             }
         }
 
+        [HttpGet("Skill")]
+        public IActionResult SkillList([FromBody] TokenClass tokenClass)
+        {
+            if (tokenClass.Token == authId)
+            {
+                //EducationLogic ed = new EducationLogic();
+                SkillLogic sk = new SkillLogic();
+                var qq = sk.GetAll(UserIdRecieved);
+
+                return Ok(qq);
+            }
+            else
+            {
+                return Ok($"Wrong Token Passed");
+            }
+
+        }
+
+        [HttpPost("Skill/Add")]
+        public IActionResult SkillAdd([FromBody] ASkillModel aSkillModel)
+        {
+            if (aSkillModel.Token == authId)
+            {
+                SkillLogic skillLogic = new SkillLogic();
+                bool ql = skillLogic.Add(UserIdRecieved, aSkillModel);
+                if (ql == true)
+                {
+                    return Created("Created Successfully", aSkillModel);
+                }
+                else
+                {
+                    return Ok("Unable to Create");
+                }
+            }
+            else
+            {
+                return Unauthorized("Wrong Token");
+            }
+        }
+
+        [HttpDelete("Skill/Delete")]
+        public IActionResult SkillDelete([FromBody] UserIdToken userIdToken)
+        {
+            if (userIdToken.Token == authId)
+            {
+                SkillLogic skillLogic = new SkillLogic();
+                bool q = skillLogic.Delete(userIdToken.Id);
+                if (q == true)
+                {
+                    return Ok("Skill deleted successfully");
+                }
+                else
+                {
+                    return Ok("Unable to delete");
+                }
+            }
+            else
+            {
+                return Unauthorized("Wrong Token");
+            }
+        }
+
+        //[HttpPut("Education/Update")]
+        //public IActionResult EducationUpdate([FromBody] UEduModel uEduModel)
+        //{
+        //    if (uEduModel.Token == authId)
+        //    {
+        //        EducationLogic educationLogic = new EducationLogic();
+        //        bool q = educationLogic.Update(UserIdRecieved, uEduModel);
+
+        //        if (q == true)
+        //        {
+        //            return Ok("Updated Sucessfully");
+        //        }
+        //        else
+        //        {
+        //            return Ok("Unable to update");
+        //        }
+
+
+        //    }
+        //    else
+        //    {
+        //        return Ok("Wrong Token");
+        //    }
+        //}
+
+        [HttpPut("Skill/Update")]
+        public IActionResult SkillUpdate([FromBody] USkillModel uSkillModel)
+        {
+            if (uSkillModel.Token == authId)
+            {
+                SkillLogic skillLogic = new SkillLogic();
+                bool q = skillLogic.Update(UserIdRecieved, uSkillModel);
+                if (q == true)
+                {
+                    return Ok("Updated Successfully");
+                }
+                else
+                {
+                    return Ok("Unable to update");
+                }
+
+            }
+            else
+            {
+                return Unauthorized("Wrong Token");
+            }
+        }
+
     }
 
 
 
 
 }
+
+
+
+
+
+
+
 

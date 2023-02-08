@@ -84,22 +84,6 @@ namespace BusinessLogic
             edu.EndDate = uEduModel.EndDate;
             edu.Cgpa = uEduModel.Cgpa;
             edu.UsId = id;
-
-
-            //Entities.AbdulContext cnt = new Entities.AbdulContext();
-            //Entities.Edu edu1 = new Entities.Edu();
-            //cnt.Edus.Update(edu);
-            //int j = cnt.SaveChanges();
-            //if (j > 0)
-            //{
-            //    Console.WriteLine("Education updated successfully");
-            //}
-            //else
-            //{
-            //    Console.WriteLine("Unable to update");
-            //}
-
-
             DataEf.Entities.AbdulContext abdulContext = new DataEf.Entities.AbdulContext();
             abdulContext.Edus.Update(edu);
             int j = abdulContext.SaveChanges();
@@ -113,6 +97,7 @@ namespace BusinessLogic
                 return false;
             }
         }
+
 
 
 
