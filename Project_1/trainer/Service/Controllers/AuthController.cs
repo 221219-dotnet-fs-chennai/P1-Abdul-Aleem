@@ -222,30 +222,6 @@ namespace Service.Controllers
             }
         }
 
-        //[HttpPut("Education/Update")]
-        //public IActionResult EducationUpdate([FromBody] UEduModel uEduModel)
-        //{
-        //    if (uEduModel.Token == authId)
-        //    {
-        //        EducationLogic educationLogic = new EducationLogic();
-        //        bool q = educationLogic.Update(UserIdRecieved, uEduModel);
-
-        //        if (q == true)
-        //        {
-        //            return Ok("Updated Sucessfully");
-        //        }
-        //        else
-        //        {
-        //            return Ok("Unable to update");
-        //        }
-
-
-        //    }
-        //    else
-        //    {
-        //        return Ok("Wrong Token");
-        //    }
-        //}
 
         [HttpPut("Skill/Update")]
         public IActionResult SkillUpdate([FromBody] USkillModel uSkillModel)
