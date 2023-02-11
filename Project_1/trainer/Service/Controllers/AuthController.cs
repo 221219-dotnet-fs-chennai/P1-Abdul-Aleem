@@ -246,6 +246,271 @@ namespace Service.Controllers
             }
         }
 
+        [HttpGet("Company")]
+        public IActionResult CompanyList([FromBody] TokenClass tokenClass)
+        {
+            if (tokenClass.Token == authId)
+            {
+                CompLogic compLogic = new CompLogic();
+                var qq = compLogic.GetAll(UserIdRecieved);
+
+                return Ok(qq);
+
+            }
+            else
+            {
+                return Unauthorized("Wrong Token Passed");
+            }
+        }
+
+
+
+        [HttpPost("Company/Add")]
+        public IActionResult CompAdd([FromBody] ACompModel aCompModel)
+        {
+            if (aCompModel.Token == authId)
+            {
+                CompLogic compLogic = new CompLogic();
+                bool ql = compLogic.Add(UserIdRecieved, aCompModel);
+                if (ql = true)
+                {
+                    return Created("Created Successfully", aCompModel);
+                }
+                else
+                {
+                    return Ok("Unable to create");
+                }
+            }
+            else
+            {
+                return Unauthorized("Wrong Token");
+            }
+        }
+
+
+        [HttpDelete("Company/Delete")]
+        public IActionResult CompDelete([FromBody] UserIdToken userIdToken)
+        {
+            if (userIdToken.Token == authId)
+            {
+                CompLogic compLogic = new CompLogic();
+                bool q = compLogic.Delete(userIdToken.Id);
+                if (q == true)
+                {
+                    return Ok("Company deleted successfully");
+                }
+                else
+                {
+                    return Ok("Unable to delete");
+                }
+            }
+            else
+            {
+                return Unauthorized("Wrong Token");
+            }
+        }
+
+
+        [HttpPut("Company/Update")]
+        public IActionResult CompUpdate([FromBody] UCompModel uCompModel)
+        {
+            if (uCompModel.Token == authId)
+            {
+                CompLogic compLogic = new CompLogic();
+                bool q = compLogic.Update(UserIdRecieved, uCompModel);
+                if (q == true)
+                {
+                    return Ok("Updated Successfully");
+                }
+                else
+                {
+                    return Ok("Unable to update");
+                }
+            }
+            else
+            {
+                return Unauthorized("Wrong Token");
+            }
+        }
+
+        //[HttpGet("Education")]
+        //public IActionResult EducationList([FromBody] TokenClass tokenClass)
+        //{
+        //    if (tokenClass.Token == authId)
+        //    {
+        //        EducationLogic ed = new EducationLogic();
+        //        var qq = ed.GetAll(UserIdRecieved);
+
+        //        return Ok(qq);
+        //    }
+        //    else
+        //    {
+        //        return Ok($"Wrong Token Passed");
+        //    }
+
+        //}
+
+        [HttpGet("Certification")]
+        public IActionResult CertList([FromBody] TokenClass tokenClass)
+        {
+            if (tokenClass.Token == authId)
+            {
+                CertLogic certLogic = new CertLogic();
+                var qq = certLogic.GetAll(UserIdRecieved);
+
+                return Ok(qq);
+            }
+            else
+            {
+                return Unauthorized("Wrong Token Passed");
+            }
+        }
+
+        //[HttpPost("Education/Add")]
+        //public IActionResult EducationAdd([FromBody] AEduModel aEduModel)
+        //{
+        //    if (aEduModel.Token == authId)
+        //    {
+        //        EducationLogic education = new EducationLogic();
+        //        bool ql = education.Add(UserIdRecieved, aEduModel);
+
+        //        if (ql == true)
+        //        {
+        //            return Created("Created Successfully", aEduModel);
+        //        }
+        //        else
+        //        {
+        //            return Ok("Unable to Create");
+        //        }
+        //    }
+        //    else
+        //    {
+        //        return Ok("Wrong Token");
+        //    }
+        //}
+
+        [HttpPost("Certification/Add")]
+        public IActionResult CertAdd([FromBody] ACertModel aCertModel)
+        {
+            if (aCertModel.Token == authId)
+            {
+                CertLogic certLogic = new CertLogic();
+                bool ql = certLogic.Add(UserIdRecieved, aCertModel);
+                if (ql == true)
+                {
+                    return Created("Created successfuly", aCertModel);
+
+                }
+                else
+                {
+                    return Ok("Unable to Create");
+                }
+            }
+            else
+            {
+                return Ok("Wrong Token");
+            }
+
+        }
+
+        //[HttpDelete("Education/Delete")]
+        //public IActionResult EducationDelete([FromBody] UserIdToken userIdToken)
+        //{
+        //    if (userIdToken.Token == authId)
+        //    {
+        //        EducationLogic education = new EducationLogic();
+        //        bool q = education.Delete(userIdToken.Id);
+
+        //        if (q == true)
+        //        {
+        //            return Ok("Education deleted successfully");
+        //        }
+        //        else
+        //        {
+        //            return Ok("Unable to delete");
+        //        }
+        //    }
+        //    else
+        //    {
+        //        return Ok("Wrong Token");
+        //    }
+        //}
+
+        [HttpDelete("Certification/Delete")]
+        public IActionResult CertDelete([FromBody] UserIdToken userIdToken)
+        {
+            if (userIdToken.Token == authId)
+            {
+                CertLogic certLogic = new CertLogic();
+                bool q = certLogic.Delete(userIdToken.Id);
+                if (q == true)
+                {
+                    return Ok("Education deleted ");
+                }
+                else
+                {
+                    return Ok("Unable to delete");
+                }
+            }
+            else
+            {
+                return Unauthorized("Wrong Token");
+            }
+        }
+
+
+
+        //[HttpPut("Education/Update")]
+        //public IActionResult EducationUpdate([FromBody] UEduModel uEduModel)
+        //{
+        //    if (uEduModel.Token == authId)
+        //    {
+        //        EducationLogic educationLogic = new EducationLogic();
+        //        bool q = educationLogic.Update(UserIdRecieved, uEduModel);
+
+        //        if (q == true)
+        //        {
+        //            return Ok("Updated Sucessfully");
+        //        }
+        //        else
+        //        {
+        //            return Ok("Unable to update");
+        //        }
+
+
+        //    }
+        //    else
+        //    {
+        //        return Ok("Wrong Token");
+        //    }
+        //}
+
+        [HttpPut("Certification/Update")]
+        public IActionResult CertUpdate([FromBody] UCertModel uCertModel)
+        {
+            if (uCertModel.Token == authId)
+            {
+                CertLogic certLogic = new CertLogic();
+                bool q = certLogic.Update(UserIdRecieved, uCertModel);
+
+                if (q == true)
+                {
+                    return Ok("Updated Successfully");
+                }
+                else
+                {
+                    return Ok("Unable to update");
+                }
+            }
+            else
+            {
+                return Unauthorized("Wrong Token");
+            }
+        }
+
+
+
+
     }
 
 

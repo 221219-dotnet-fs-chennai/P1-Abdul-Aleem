@@ -86,8 +86,8 @@ SELECT * FROM pro.comp;
 
 -- insert into table
 
-INSERT INTO pro.comp(about,comp_name,[start_date],[end_date])
-VALUES('good company to work. Nice work life balance','Revature','2022-12-19','2023-03-01');
+INSERT INTO pro.comp(about,comp_name,[start_date],[end_date],us_id)
+VALUES('good company to work. Nice work life balance','Revature','2022-12-19','2023-03-01',1);
 
 -- truncate comp table
 TRUNCATE TABLE pro.comp;

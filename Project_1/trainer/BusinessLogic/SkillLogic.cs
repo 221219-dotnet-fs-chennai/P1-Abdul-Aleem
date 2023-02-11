@@ -68,29 +68,6 @@ namespace BusinessLogic
             }
         }
 
-        //public bool Update(int id, UEduModel uEduModel)
-        //{
-        //    DataEf.Entities.Edu edu = new DataEf.Entities.Edu();
-        //    edu.EduId = uEduModel.EduId;
-        //    edu.CourseName = uEduModel.CourseName;
-        //    edu.InstitutionName = uEduModel.InstitutionName;
-        //    edu.StartDate = uEduModel.StartDate;
-        //    edu.EndDate = uEduModel.EndDate;
-        //    edu.Cgpa = uEduModel.Cgpa;
-        //    edu.UsId = id;
-        //    DataEf.Entities.AbdulContext abdulContext = new DataEf.Entities.AbdulContext();
-        //    abdulContext.Edus.Update(edu);
-        //    int j = abdulContext.SaveChanges();
-
-        //    if (j > 0)
-        //    {
-        //        return true;
-        //    }
-        //    else
-        //    {
-        //        return false;
-        //    }
-        //}
 
         public bool Update(int id, USkillModel uSkillModel)
         {

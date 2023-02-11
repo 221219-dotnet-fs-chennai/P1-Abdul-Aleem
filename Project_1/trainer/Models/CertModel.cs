@@ -14,7 +14,41 @@ namespace Models
 
         public string CertLicence { get; set; } = null!;
 
-        public int UsId { get; set; }
+        //public int UsId { get; set; }
+
+    }
+
+    public class ACertModel : TokenClass
+    {
+        //public int CertId { get; set; }
+
+        new public string Token { get; set; }
+
+
+        public string CertificationName { get; set; } = null!;
+
+        public string AcquiredFrom { get; set; } = null!;
+
+        public string CertLicence { get; set; } = null!;
+
+        //public int UsId { get; set; }
+
+    }
+
+    public class UCertModel : TokenClass
+    {
+        public int CertId { get; set; }
+
+        new public string Token { get; set; }
+
+
+        public string CertificationName { get; set; } = null!;
+
+        public string AcquiredFrom { get; set; } = null!;
+
+        public string CertLicence { get; set; } = null!;
+
+        //public int UsId { get; set; }
 
     }
 }
