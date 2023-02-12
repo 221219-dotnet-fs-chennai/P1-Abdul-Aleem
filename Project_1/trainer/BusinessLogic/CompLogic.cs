@@ -4,7 +4,7 @@ using System.Collections;
 
 namespace BusinessLogic
 {
-    public class CompLogic
+    public class CompLogic : ICrud<ACompModel, UCompModel>
     {
 
         public IList GetAll(int id)

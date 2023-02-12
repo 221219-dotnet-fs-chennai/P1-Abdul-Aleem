@@ -33,7 +33,7 @@ namespace Service.Controllers
                 authId = TokenGenerator.TokenGeneratorToken();
                 //AuthId = tk;
                 //authId = tk;
-                return Ok($"Token : {authId} {UserIdRecieved}");
+                return Ok($"Token : {authId}");
             }
             else
             {

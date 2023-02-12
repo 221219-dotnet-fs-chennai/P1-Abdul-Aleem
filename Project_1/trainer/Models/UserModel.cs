@@ -17,6 +17,7 @@ namespace Models
 
         public long PhoneNo { get; set; }
 
+        public string City { get; set; }
 
 
     }

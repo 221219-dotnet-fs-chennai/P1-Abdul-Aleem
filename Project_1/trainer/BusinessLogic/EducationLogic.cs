@@ -4,12 +4,12 @@ using Models;
 using AutoMapper;
 using System.Collections.Generic;
 using System.Collections;
-using DataEf;
+
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace BusinessLogic
 {
-    public class EducationLogic
+    public class EducationLogic : ICrud<AEduModel, UEduModel>
     {
 
         public IList GetAll(int id)

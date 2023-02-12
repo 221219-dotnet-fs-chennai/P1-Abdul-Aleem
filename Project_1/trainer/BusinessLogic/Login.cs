@@ -1,5 +1,6 @@
 ﻿using System.Numerics;
 using System.Xml.Linq;
+//using DataEf;
 using DataEf;
 using Models;
 using static Azure.Core.HttpHeader;
@@ -45,6 +46,7 @@ public class Login
         user1.EmailId = user.EmailId;
         user1.Password = user.Password;
         user1.PhoneNo = user.PhoneNo;
+        user1.City = user.City;
 
         abdulContext.Users.Add(user1);
         int i = abdulContext.SaveChanges();

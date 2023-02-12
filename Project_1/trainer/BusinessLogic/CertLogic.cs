@@ -4,7 +4,7 @@ using System.Collections;
 
 namespace BusinessLogic
 {
-    public class CertLogic
+    public class CertLogic : ICrud<ACertModel, UCertModel>
     {
 
         public IList GetAll(int id)

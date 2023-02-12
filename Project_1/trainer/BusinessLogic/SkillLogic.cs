@@ -4,7 +4,7 @@ using System.Collections;
 
 namespace BusinessLogic
 {
-    public class SkillLogic
+    public class SkillLogic : ICrud<ASkillModel, USkillModel>
     {
         public IList GetAll(int id)
         {

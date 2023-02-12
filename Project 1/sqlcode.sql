@@ -176,10 +176,16 @@ SELECT * From pro.[edu];
 SELECT * From pro.[comp];
 SELECT * From pro.[cert];
 
+
+ALTER TABLE pro.[user]
+ADD city VARCHAR(100);
+
+
+
 -- insertion of values
 
-INSERT into pro.[user](first_name,last_name,email_id,[password],phone_no)
-VALUES('Abdul','Aleem','abdulaleem@gmail.com','12345678','7358660113');
+INSERT into pro.[user](first_name,last_name,email_id,[password],phone_no,city)
+VALUES('Abdul','Aleem','abdeem@gmail.com','12345678','7358660113','chennai');
 
 INSERT into pro.[user](first_name,last_name,email_id,[password],phone_no)
 VALUES('Vishwa','K','VishvaK@gmail.com','12345678','7358660111');
