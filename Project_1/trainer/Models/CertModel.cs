@@ -37,9 +37,11 @@ namespace Models
 
     public class UCertModel : TokenClass
     {
-        public int CertId { get; set; }
 
         new public string Token { get; set; }
+
+        public int CertId { get; set; }
+
 
 
         public string CertificationName { get; set; } = null!;
