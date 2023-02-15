@@ -22,8 +22,8 @@ select * FROM pro.skills;
 
 
 -- insert into skills
-INSERT INTO pro.skills(skill_name,skill_experience)
-VALUES('Python Programming',18);
+INSERT INTO pro.skills(skill_name,skill_experience,us_id)
+VALUES('Perl',18,1);
 
 -- truncate skills
 TRUNCATE TABLE pro.skills;
@@ -118,8 +118,8 @@ CREATE TABLE pro.[cert](
 SELECT * From pro.cert;
 
 -- insert cert table
-INSERT INTO pro.cert(certification_name,acquired_from,cert_licence)
-VALUES('Python programming course','UDEMY','123-343-3443');
+INSERT INTO pro.cert(certification_name,acquired_from,cert_licence,us_id)
+VALUES('P','UDEMY','123-343-3443',3);
 
 -- truncate cert
 TRUNCATE TABLE pro.cert;
@@ -185,7 +185,7 @@ ADD city VARCHAR(100);
 -- insertion of values
 
 INSERT into pro.[user](first_name,last_name,email_id,[password],phone_no,city)
-VALUES('Abdul','Aleem','abdeem@gmail.com','12345678','7358660113','chennai');
+VALUES('Ab','Aleem','abdeem@gml.com','12345678','7358660113','chennai');
 
 INSERT into pro.[user](first_name,last_name,email_id,[password],phone_no)
 VALUES('Vishwa','K','VishvaK@gmail.com','12345678','7358660111');

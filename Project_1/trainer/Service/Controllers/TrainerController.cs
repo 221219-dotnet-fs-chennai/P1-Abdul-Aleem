@@ -2,46 +2,45 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BusinessLogic;
 using Microsoft.AspNetCore.Mvc;
+using Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Service.Controllers
 {
+
+    [ApiController]
     [Route("api/[controller]")]
-    public class TrainerController : ControllerBase
+    public class TrainerController : Controller
     {
-        // GET: api/values
-        [HttpGet]
-        public IEnumerable<string> Get()
+
+        [HttpGet("City/{city}")]
+        public IActionResult FindCity([FromRoute] string city)
         {
-            return new string[] { "value1", "value2" };
+            FindTrainerLogic findTrainerLogic = new FindTrainerLogic();
+            var q = findTrainerLogic.UsingCity(city);
+            return Ok(q);
+
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet("Skill/{skill}")]
+        public IActionResult FindSkill([FromRoute] string skill)
         {
-            return "value";
+            FindTrainerLogic findTrainerLogic = new FindTrainerLogic();
+            var q = findTrainerLogic.UsingSkill(skill);
+            return Ok(q);
         }
 
-        // POST api/values
-        [HttpPost]
-        public void Post([FromBody] string value)
+        [HttpGet("Certification/{cert}")]
+        public IActionResult FindCertification([FromRoute] string cert)
         {
-        }
-
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+            FindTrainerLogic findTrainerLogic = new FindTrainerLogic();
+            var q = findTrainerLogic.UsingCertification(cert);
+            return Ok(q);
         }
     }
+
 }
 
