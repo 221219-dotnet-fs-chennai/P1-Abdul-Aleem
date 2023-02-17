@@ -20,8 +20,11 @@ namespace Service.Controllers
         public static string authId;
         public string AuthId { get; set; }
 
+
+        //[EnableCors(origins: "*", headers: "*", methods: "*")]
+
         [HttpPost]
-        public IActionResult post([FromBody] LoginClass loginClass)
+        public TokenClass post([FromBody] LoginClass loginClass)
         {
             Login login = new Login();
 
@@ -33,12 +36,17 @@ namespace Service.Controllers
                 authId = TokenGenerator.TokenGeneratorToken();
                 //AuthId = tk;
                 //authId = tk;
-                return Ok($"Token : {authId}");
+                TokenClass token = new TokenClass();
+                token.Token = authId;
+                //return Ok($"Token : {authId}");
+                return token;
             }
             else
             {
-
-                return Ok("Wrong EmailId Or Password");
+                TokenClass token = new TokenClass();
+                token.Token = "0";
+                return token;
+                //return Ok("Wrong EmailId Or Password");
             }
         }
 
@@ -72,10 +80,11 @@ namespace Service.Controllers
 
         }
 
-        [HttpGet("Education")]
-        public IActionResult EducationList([FromBody] TokenClass tokenClass)
+        [HttpGet("Education/{token}")]
+        public IActionResult EducationList([FromRoute] string token)
         {
-            if (tokenClass.Token == authId)
+            //if (tokenClass.Token == authId)
+            if (token == authId)
             {
                 EducationLogic ed = new EducationLogic();
                 var qq = ed.GetAll(UserIdRecieved);
@@ -424,10 +433,10 @@ namespace Service.Controllers
             }
         }
 
-        [HttpGet("GetAll")]
-        public IActionResult GetAll([FromBody] TokenClass tokenClass)
+        [HttpGet("GetAll/{token}")]
+        public IActionResult GetAll([FromRoute] string token)
         {
-            if (tokenClass.Token == authId)
+            if (token == authId)
             {
                 List<object> list = new List<object>();
 
@@ -450,6 +459,11 @@ namespace Service.Controllers
                 CertLogic certLogic = new CertLogic();
                 var q3 = certLogic.GetAll(UserIdRecieved);
                 list.Add(q3);
+
+                //user details
+                Login login = new Login();
+                var q4 = login.getUser(UserIdRecieved);
+                list.Add(q4);
 
                 return Ok(list);
             }

@@ -1,26 +1,26 @@
 body{
     font-family: 'Roboto Condensed', sans-serif;
-}
-
-.logoname{
+  }
+  
+  .logoname{
     background: linear-gradient(to right, #f32170,
     #ff6b08, #cf23cf, #eedd44);
--webkit-text-fill-color: transparent;
--webkit-background-clip: text;
-}
-
-.divhome{
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  }
+  
+  .divhome{
     padding-left: 100px;
     padding-top: 200px;
-
-}
-.h11{
+  
+  }
+  .h11{
     font-size: 90px;
     font-weight: bolder;
-}
-
-/* button */
-.btn-3 {
+  }
+  
+  /* button */
+  .btn-3 {
     background: rgb(0,172,238);
   background: linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%);
     width: 130px;
@@ -75,51 +75,37 @@ body{
      background: rgba(2,126,251,1);
     /* transition: all 0.3s ease; */
   }
-  /* .btn-3 span:before {
-    width: 2px;
-    height: 0%;
-  }
-  .btn-3 span:after {
-    width: 0%;
-    height: 2px;
-  }
-  .btn-3 span:hover:before {
-    height: 100%;
-  }
-  .btn-3 span:hover:after {
-    width: 100%;
-  } */
-/* button end */
-
-.divbt{
+  
+  .divbt{
     padding-top: 1px;
-}
-
-.btf{
-    border-bottom: 2px solid rgb(0,172,238);
+  }
+  
+  .btf{
+    border-bottom: 2px solid orangered;
     margin-right: 10px;
-}
-
-/* html1 */
-.login{
-    height: 600px;
+  }
+  
+  /* html1 */
+  .login{
+    height: 20px;
     width: 600px;
     /* background-color: rgb(0,172,238); */
-    margin-top: 100px;
+    margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
-}
-.emlog{
+  }
+  .emlog{
     display: flex;
     align-items: center;
     justify-content: center;
-}
-.pts{
+  }
+  .pts{
     font-size: 30px;
-}
-
-.login-page {
-    width: 500px;
+  }
+  
+  .login-page {
+    height:200px ;
+    width: 400px;
     padding: 8% 0 0;
     margin: auto;
   }
@@ -148,7 +134,9 @@ body{
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     outline: 0;
-    background: rgb(0,172,238);
+    /* background: rgb(0,172,238);
+     */
+     background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);;
     width: 100%;
     border: 0;
     padding: 15px;
@@ -206,42 +194,70 @@ body{
   .container .info span .fa {
     color: #EF3B3A;
   }
-
+  
   /* index2 */
   .login-page1{
     padding-top: 80px;
   }
+  .logintext{
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+    padding-top: 100px;
+  }
 
-.body1{
-    background: rgb(131,58,180);
-    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(29,218,253,1) 50%, rgba(252,176,69,1) 100%);
-}
-table, th, td {
-  border: 1px solid black;
-}
-#profiletable{
-  /* border: 5px solid; */
+  .dp{
+    height: 120px;
+    width: 120px;
+    margin-left: 50px;
+    margin-top: 25px;
+  }
+  .maindiv{
+    margin-left: 90px;
+    margin-right: 90px;
+    background-color: white;
+    margin-top: 20px;
+    border-radius: 20px;
+  }
+  .myprofilebody{
+    background-color:#EEEEEE;
+  }
+  .profile-body{
+    margin-top: 20px;
+    background-color: white;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-radius: 20px;
+  }
 
-  display: flex;
-  /* height: 150px; */
-  /* align-items: center;
-   */
-   justify-content: center;
-   
-   padding-top: 100px;
-}
+  .dpimg{
+    width: 150px;
+    height: 150px;
+  }
+  .namecity{
+    margin-left: 0;
+  }
+  .fname{
+    display: flex;
+    padding-left: 20px;
+  }
+  .fname h4 {
+    font-weight: bolder;
+  }
+  .city{
+    padding-left: 20px;
+  }
+ .emailcol{
+  text-align: right;
+  position: relative;
 
-.eduindiv{
-background-color: #ffffff;
-padding-top: 10px;
-padding-bottom: 10px;
-/* border: #000000 solid 2px; */
-width: 70%;
-padding-left: 20px;
-margin-bottom: 30px;
-border-radius: 20px;
-}
-.edudiv{
-  padding-left: 20px;
-  /* margin-bottom: 20px; */
-}
+ }
+ .emailcol div{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding-right: 20px;
+  padding-bottom: 4px;
+ }
+ 
+  

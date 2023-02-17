@@ -5,6 +5,7 @@ using DataEf;
 using Models;
 using static Azure.Core.HttpHeader;
 using System.Collections.Generic;
+using System.Collections;
 
 
 namespace BusinessLogic;
@@ -61,6 +62,37 @@ public class Login
 
         return query;
 
+    }
+
+    //public IList GetAll(int id)
+    //{
+    //    DataEf.Entities.AbdulContext cnt = new DataEf.Entities.AbdulContext();
+
+
+    //    var query1 = (from st in cnt.Certs
+    //                  where st.UsId == id
+    //                  select st).ToList();
+
+    //    var tr = query1.Select(x => new CertModel()
+    //    {
+    //        CertId = x.CertId,
+    //        CertificationName = x.CertificationName,
+    //        AcquiredFrom = x.AcquiredFrom,
+    //        CertLicence = x.CertLicence
+    //    }).ToList();
+
+    //    return tr;
+    //}
+
+    public IList getUser(int id)
+    {
+        DataEf.Entities.AbdulContext abdulContext = new DataEf.Entities.AbdulContext();
+
+        var query = (from st in abdulContext.Users
+                     where st.UserId == id
+                     select st).ToList();
+
+        return query;
     }
 }
 
