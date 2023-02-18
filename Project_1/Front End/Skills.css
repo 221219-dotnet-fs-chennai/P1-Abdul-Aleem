@@ -1,0 +1,314 @@
+body{
+    font-family: 'Roboto Condensed', sans-serif;
+  }
+  
+  .logoname{
+    background: linear-gradient(to right, #f32170,
+    #ff6b08, #cf23cf, #eedd44);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  }
+  
+  .divhome{
+    padding-left: 100px;
+    padding-top: 200px;
+  
+  }
+  .h11{
+    font-size: 90px;
+    font-weight: bolder;
+  }
+  
+  /* button */
+  .btn-3 {
+    background: rgb(0,172,238);
+  background: linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%);
+    width: 130px;
+    height: 40px;
+    line-height: 42px;
+    padding: 0;
+    border: none;
+    
+  }
+  .btn-3 span {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .btn-3:before,
+  .btn-3:after {
+    position: absolute;
+    content: "";
+    right: 0;
+    top: 0;
+     background: rgba(2,126,251,1);
+    transition: all 0.3s ease;
+  }
+  .btn-3:before {
+    height: 0%;
+    width: 2px;
+  }
+  .btn-3:after {
+    width: 0%;
+    height: 2px;
+  }
+  .btn-3:hover{
+     background: transparent;
+    box-shadow: none;
+  }
+  .btn-3:hover:before {
+    height: 100%;
+  }
+  .btn-3:hover:after {
+    width: 100%;
+  }
+  .btn-3 span:hover{
+     color: rgba(2,126,251,1);
+  }
+  .btn-3 span:before,
+  .btn-3 span:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+     background: rgba(2,126,251,1);
+    /* transition: all 0.3s ease; */
+  }
+  
+  .divbt{
+    padding-top: 1px;
+  }
+  
+  .btf{
+    border-bottom: 2px solid orangered;
+    margin-right: 10px;
+  }
+  
+  /* html1 */
+  .login{
+    height: 20px;
+    width: 600px;
+    /* background-color: rgb(0,172,238); */
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .emlog{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .pts{
+    font-size: 30px;
+  }
+  
+  .login-page {
+    height:200px ;
+    width: 400px;
+    padding: 8% 0 0;
+    margin: auto;
+  }
+  .form {
+    position: relative;
+    z-index: 1;
+    background:orangered;
+    max-width: 500px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    /* box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24); */
+  }
+  .form input {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+  .form button {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    /* background: rgb(0,172,238);
+     */
+     background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    padding-top: 10px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+  }
+  .form button:hover,.form button:active,.form button:focus {
+    background: rgb(0,172,238);
+  }
+  .form .message {
+    margin: 15px 0 0;
+    color: #b3b3b3;
+    font-size: 12px;
+  }
+  .form .message a {
+    color: rgb(0,172,238);
+    text-decoration: none;
+  }
+  .form .register-form {
+    display: none;
+  }
+  .container {
+    position: relative;
+    z-index: 1;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  .container:before, .container:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  .container .info {
+    margin: 50px auto;
+    text-align: center;
+  }
+  .container .info h1 {
+    margin: 0 0 15px;
+    padding: 0;
+    font-size: 36px;
+    font-weight: 300;
+    color: #1a1a1a;
+  }
+  .container .info span {
+    color: #4d4d4d;
+    font-size: 12px;
+  }
+  .container .info span a {
+    color: #000000;
+    text-decoration: none;
+  }
+  .container .info span .fa {
+    color: #EF3B3A;
+  }
+  
+  /* index2 */
+  .login-page1{
+    padding-top: 80px;
+  }
+  .logintext{
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+    padding-top: 100px;
+  }
+
+  .dp{
+    height: 120px;
+    width: 120px;
+    margin-left: 50px;
+    margin-top: 25px;
+  }
+  .maindiv{
+    margin-left: 90px;
+    margin-right: 90px;
+    background-color: white;
+    margin-top: 20px;
+    border-radius: 20px;
+  }
+  .myprofilebody{
+    background-color:#EEEEEE;
+    padding-bottom: 30px;
+  }
+  .profile-body{
+    margin-top: 20px;
+    background-color: white;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-radius: 20px;
+  }
+
+  .dpimg{
+    width: 150px;
+    height: 150px;
+  }
+  .namecity{
+    margin-left: 0;
+  }
+  .fname{
+    display: flex;
+    padding-left: 20px;
+  }
+  .ush4{
+    font-family: 'Roboto Condensed bold', sans-serif;
+    
+  }
+  .fname h4 {
+    font-weight: bolder;
+  }
+  .city{
+    padding-left: 20px;
+  }
+ .emailcol{
+  text-align: right;
+  position: relative;
+
+ }
+ .emailcol div{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding-right: 20px;
+  padding-bottom: 4px;
+ }
+ .eduupdiv{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+ }
+.edup{
+  padding-left: 20px;
+  font-family: 'Roboto Condensed bold', sans-serif;
+
+} 
+.educol1{
+  padding-left: 30px;
+  padding-bottom: 20px;
+}
+.edudate{
+  display: flex;
+  border-bottom: orangered 1px solid;
+}
+.cgpa{
+/* padding-bottom: 2px; */
+margin-bottom: -1px;
+padding-bottom: 2px;
+}
+.skillend{
+  border-bottom: orangered 1px solid;
+
+}
+.edicon,.delicon{
+    padding-bottom: 10px;
+    color: orangered;
+    height: 20px;
+    width: 20px;
+}
+.aic{
+    /* padding-left:60px; */
+    margin-top: 20px;
+}
+.edutoolbar{
+    padding-left: 40%;
+}
+.addicon{
+margin-left: auto;
+margin-right: 2em;
+}
+.educon{
+    padding-top: 40px;
+}
