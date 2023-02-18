@@ -221,6 +221,7 @@ body{
   }
   .myprofilebody{
     background-color:#EEEEEE;
+    padding-bottom: 30px;
   }
   .profile-body{
     margin-top: 20px;
@@ -241,6 +242,10 @@ body{
     display: flex;
     padding-left: 20px;
   }
+  .ush4{
+    font-family: 'Roboto Condensed bold', sans-serif;
+    
+  }
   .fname h4 {
     font-weight: bolder;
   }
@@ -259,5 +264,30 @@ body{
   padding-right: 20px;
   padding-bottom: 4px;
  }
- 
+ .eduupdiv{
+  padding-top: 10px;
+  padding-bottom: 10px;
+ }
+.edup{
+  padding-left: 20px;
+  font-family: 'Roboto Condensed bold', sans-serif;
+
+} 
+.educol1{
+  padding-left: 30px;
+  padding-bottom: 20px;
+}
+.edudate{
+  display: flex;
+  border-bottom: orangered 1px solid;
+}
+.cgpa{
+/* padding-bottom: 2px; */
+margin-bottom: -1px;
+padding-bottom: 2px;
+}
+.skillend{
+  border-bottom: orangered 1px solid;
+
+}
   
