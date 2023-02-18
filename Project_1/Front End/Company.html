@@ -16,8 +16,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="./Education.css">
 
+  <link rel="stylesheet" href="./Company.css">
 
 
 </head>
@@ -39,7 +39,7 @@
             <a class="nav-link active btt" aria-current="page" href="#">My Profile</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active btt" aria-current="page" href="#">Education</a>
+            <a class="nav-link active btt" aria-current="page" href="./Education.html">Education</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active btt" aria-current="page" href="#">Skills</a>
@@ -64,57 +64,50 @@
     </div>
   </nav>
 
+
   <div class="profile-body">
-    <div class="eduupdiv"><h5 class="edup">Education</h5>
-    <div class="addicon">
-        <!-- offconcas start -->
-        <button  style="background-color: orangered; border:orangered" class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="bi bi-plus-square-fill"></i></button>
-
-<div style="background-color: orangered;" class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasRightLabel">Add Education</h5>
+    <div class="eduupdiv"><h5 class="edup">Experience</h5>
+        <div class="addicon">
+            <!-- offconcas start -->
+            <button  style="background-color: orangered; border:orangered" class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="bi bi-plus-square-fill"></i></button>
     
-
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div>
-    <div class="form">
-       
-        <form  class="login-form" name="formcontact1">
-          <input type="text" placeholder="Institution Name" id="addinsname"/>
-          <input type="text" placeholder="Course" id = "addconame"/>
-          <input type="text" placeholder="CGPA" id="addcgpa"/>
-          <input type="text" placeholder="Start Date" id="addsdate"/>
-          <input type="text" placeholder="End Date" id="addedate"/>
-
-
-          <!-- <p class="message" >Not registered? <a href="#">Create an account</a></p> -->
-        </form>
-        <button class="frbut" onclick="AddEducation()">login</button>
-
-      </div>
-      </div>
-  <div class="offcanvas-body" >
-    ...
-  </div>
-</div>
-<!-- off canvas end -->
-        <!--     </div> -->
-    </div>
-
+    <div style="background-color: orangered;" class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasRightLabel">Add Education</h5>
         
-</div>
-      <div class="container-fluid educon" id="edubody">
+    
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div>
+        <div class="form">
+           
+            <form  class="login-form" name="formcontact1">
+              <input type="text" placeholder="Designation" id="adddesig"/>
+              <input type="text" placeholder="Company Name" id = "addcompname"/>
+              <input type="text" placeholder="Start Date" id="addsdate"/>
+              <input type="text" placeholder="End Date" id="addedate"/>
+    
+    
+              <!-- <p class="message" >Not registered? <a href="#">Create an account</a></p> -->
+            </form>
+            <button class="frbut" onclick="AddCompany()">login</button>
+    
+          </div>
+          </div>
+      <div class="offcanvas-body" >
+        ...
+      </div>
+    </div>
+    <!-- off canvas end -->
+            <!--     </div> -->
+        </div>
+    </div>
+      <div class="container-fluid" id="compbody">
         <div class="row">
           <div class="col-10">
             <div class="educol1">
-              <h5>Bs Abdur rahman crescent institute of science and technology</h5>
-              <h6>Electronics and Communication</h6>
-              <p class="cgpa">CGPA - 9.0</p>
-              <!-- <div class="cgpa">
-                CGPA - 9.0
-              </div>  -->
-  
+              <h5>FullStack Developer</h5>
+              <h6>Revature</h6>
               <div class="edudate">
                 <p>10-05-2001</p>
                 &nbsp;
@@ -124,6 +117,7 @@
               </div>
             </div>
           </div>
+
           <div class="col-2">
             <div class="edutoolbar">
                 <button style= "border:orangered; background-color:white;"  type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight1" aria-controls="offcanvasRight"><i style="font-size: 1.6rem;" class="bi  bi-pencil-fill  edicon"></i></i></button>
@@ -139,11 +133,10 @@
                     <div class="form">
                        
                         <form  class="login-form" name="formcontact1">
-                          <input type="text" placeholder="Institution Name" id="usname"/>
-                          <input type="text" placeholder="Course" id = "pass"/>
-                          <input type="text" placeholder="CGPA" id="usname"/>
-                          <input type="text" placeholder="Start Date" id="usname"/>
-                          <input type="text" placeholder="End Date" id="usname"/>
+                            <input type="text" placeholder="Designation" id="uadddesig"/>
+                            <input type="text" placeholder="Company Name" id = "uaddcompname"/>
+                            <input type="text" placeholder="Start Date" id="uaddsdate"/>
+                            <input type="text" placeholder="End Date" id="uaddedate"/>
                 
                 
                           <!-- <p class="message" >Not registered? <a href="#">Create an account</a></p> -->
@@ -162,14 +155,13 @@
                 <a class="aic" href=""><i style="font-size: 1.6rem;" class="bi bi-trash3-fill delicon"></i></a>
             </div>
           </div>
-
          </div>
    </div>
     </div>
-  
-<script src="./Education.js"></script>
 
 
-  
+
+
+    <script src="./Company.js"></script>
   </body>
-</html>
+  </html>

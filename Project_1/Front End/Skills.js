@@ -111,44 +111,6 @@ MyFunction();
 
 
 
-// function DeleteEducation(eduid){
-//     console.log(eduid);
-//     var tk = localStorage.getItem("myToken");
-
-//     const asyncPost = async () =>{
-//         try{
-//             const response = await fetch(`https://localhost:7277/api/Auth/Education/Delete`,{
-//                 method:'DELETE',
-//                 headers:{
-//                   'Content-Type':'application/json',
-
-//                     'Accept': '*/*',
-
-//                 },  body:JSON.stringify({
-//                     "token": tk,
-//                     "id": eduid
-//                 })
-              
-//             });
-//             const data = await response.text();
-//             console.log(data);
-//             if(data === "Unable to delete"){
-//                 alert("Unable to delete");
-//             }
-//             else{
-//             alert("Deleted successfully");
-//             location.reload();
-//             }
-           
-      
-//         }catch(error){
-//             console.log(error);
-//             alert(error);
-//         }
-//     }
-//     asyncPost();
-// }
-
 
 
 function DeleteSkill(skillID){
