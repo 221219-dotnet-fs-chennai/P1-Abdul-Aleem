@@ -9,18 +9,23 @@ namespace BusinessLogic
 
         public List<DataEf.Entities.User> queryable;
 
-        public Dictionary<int, string> UsingCity(string city)
+        public IList UsingCity(string city)
         {
             DataEf.Entities.AbdulContext abdulContext = new DataEf.Entities.AbdulContext();
             var query = (from st in abdulContext.Users
                          where st.City == city
                          select st).ToList();
-            Dictionary<int, string> dict = new Dictionary<int, string>();
+            //Dictionary<int, string> dict = new Dictionary<int, string>();
+            //List<DataEf.Entities.User> users = new List<DataEf.Entities.User>();
+            List<Models.UserModelTrainer> users = new List<UserModelTrainer>();
             foreach (var q in query)
             {
-                dict.Add(q.UserId, $"{q.FirstName} {q.LastName}");
+                //dict.Add(q.UserId, $"{q.FirstName} {q.LastName}");
+                //AuthorList.Add(new Author("Mahesh Chand", 35, "A Prorammer's Guide to ADO.NET", true, new DateTime(2003, 7, 10)));
+                users.Add(new Models.UserModelTrainer(q.FirstName, q.LastName, q.EmailId, q.Password, q.PhoneNo, q.City));
+
             }
-            return dict;
+            return users;
         }
 
         public IList UsingSkill(string skill)
@@ -40,8 +45,13 @@ namespace BusinessLogic
                      select new
                      {
                          userid = pd.UserId,
-                         fname = pd.FirstName,
-                         lname = pd.LastName
+                         firstName = pd.FirstName,
+                         lastName = pd.LastName,
+                         emailId = pd.EmailId,
+                         phoneNo = pd.PhoneNo,
+                         city = pd.City,
+
+
                      }
                      ).ToList();
             return q;
@@ -61,8 +71,11 @@ namespace BusinessLogic
                      select new
                      {
                          userid = pd.UserId,
-                         fname = pd.FirstName,
-                         lname = pd.LastName,
+                         firstName = pd.FirstName,
+                         lastName = pd.LastName,
+                         emailId = pd.EmailId,
+                         phoneNo = pd.PhoneNo,
+                         city = pd.City,
                      }).ToList();
             return q;
         }

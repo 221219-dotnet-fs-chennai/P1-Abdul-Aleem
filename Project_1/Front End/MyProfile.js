@@ -1,3 +1,6 @@
+function logout(){
+  localStorage.removeItem("myToken");
+}
 function MyFunction() {
     var tk = localStorage.getItem("myToken");
     console.log(tk);

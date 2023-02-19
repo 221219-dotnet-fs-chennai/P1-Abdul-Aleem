@@ -1,3 +1,6 @@
+function logout(){
+    localStorage.removeItem("myToken");
+}
 function MyFunction(){
     var tk = localStorage.getItem("myToken");
     console.log(tk);
@@ -43,7 +46,7 @@ function SkillProfile(data){
                 
                           <!-- <p class="message" >Not registered? <a href="#">Create an account</a></p> -->
                         </form>
-                        <button class="frbut" onclick="UpdateCertification(${item.certId},${count})">login</button>
+                        <button class="frbut" onclick="UpdateCertification(${item.certId},${count})">Update</button>
                 
                       </div>
                       </div>

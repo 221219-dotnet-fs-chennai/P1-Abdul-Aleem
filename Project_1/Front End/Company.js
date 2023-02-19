@@ -1,3 +1,6 @@
+function logout(){
+    localStorage.removeItem("myToken");
+}
 function MyFunction(){
     var tk = localStorage.getItem("myToken");
     console.log(tk);
@@ -51,7 +54,7 @@ function MyFunction(){
                     
                               <!-- <p class="message" >Not registered? <a href="#">Create an account</a></p> -->
                             </form>
-                            <button class="frbut" onclick="UpdateCompany(${item.compId},${count})">login</button>
+                            <button class="frbut" onclick="UpdateCompany(${item.compId},${count})">Update</button>
                     
                           </div>
                           </div>
