@@ -64,7 +64,7 @@ namespace Service.Controllers
 
                     user1.FirstName = us.FirstName;
                     user1.LastName = us.LastName;
-                    user1.EmailId = us.Password;
+                    user1.EmailId = us.EmailId;
                     user1.Password = "";
                     user1.PhoneNo = us.PhoneNo;
                     user1.City = us.City;
