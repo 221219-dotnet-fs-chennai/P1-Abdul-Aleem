@@ -46,10 +46,10 @@ function MyFunction(){
                         <div class="form">
                            
                             <form  class="login-form" name="formcontact1">
-                                <input type="text" placeholder="Designation" value = ${item.about} id="uadddesig${count}"/>
-                                <input type="text" placeholder="Company Name" value = ${item.compName} id = "uaddcompname${count}"/>
-                                <input type="text" placeholder="Start Date" value = ${startDate.substr(0,10)} id="uaddsdate${count}"/>
-                                <input type="text" placeholder="End Date" value = ${endDate.substr(0,10)} id="uaddedate${count}"/>
+                                <input type="text" placeholder="Designation" value = "${item.about}" id="uadddesig${count}"/>
+                                <input type="text" placeholder="Company Name" value = "${item.compName}" id = "uaddcompname${count}"/>
+                                <input type="text" placeholder="Start Date" value = "${startDate.substr(0,10)}" id="uaddsdate${count}"/>
+                                <input type="text" placeholder="End Date" value = "${endDate.substr(0,10)}" id="uaddedate${count}"/>
                     
                     
                               <!-- <p class="message" >Not registered? <a href="#">Create an account</a></p> -->

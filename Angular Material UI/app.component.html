@@ -1,0 +1,59 @@
+<h1>Material-UI</h1>
+<div class="container">
+  <mat-grid-list cols="2" rowHeight="3:1">
+
+    <mat-grid-tile class="box11">
+      <mat-grid-tile-header>Slider</mat-grid-tile-header>
+      <mat-slider min="1" max="5" step="0.5" value="1.5">
+      <input matSliderThumb>
+    </mat-slider>
+  </mat-grid-tile>
+
+    <mat-grid-tile class="box11">
+      <mat-grid-tile-header>Range Slider</mat-grid-tile-header>
+      <mat-slider min="1" max="10">
+        <input matSliderStartThumb>
+        <input matSliderEndThumb>
+      </mat-slider>
+    </mat-grid-tile>
+
+    <mat-grid-tile class="box12"> 
+      <mat-grid-tile-header>Raised Button</mat-grid-tile-header>
+
+      <button mat-raised-button color="primary">Primary</button>
+      <button mat-raised-button color="accent">Accent</button>
+      <button mat-raised-button color="warn">Warn</button>
+     </mat-grid-tile>
+
+    <mat-grid-tile class="box12">
+      <mat-grid-tile-header>Fab Button</mat-grid-tile-header>
+
+      <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
+        Delete
+      </button>
+
+      <button mat-fab color="warn" aria-label="Example icon button with a home icon">
+        Home
+      </button>
+    </mat-grid-tile>
+
+    <mat-grid-tile class="box13">
+      <mat-grid-tile-header>Indeterminate progress-bar
+      </mat-grid-tile-header>
+
+      <mat-progress-bar mode="indeterminate" value="20"></mat-progress-bar>
+
+    </mat-grid-tile>
+
+    <mat-grid-tile class="box13">
+      <mat-grid-tile-header>Spinner</mat-grid-tile-header>
+
+      <mat-spinner
+color=warn
+      ></mat-spinner>
+
+    </mat-grid-tile>
+
+  </mat-grid-list>
+  
+</div>

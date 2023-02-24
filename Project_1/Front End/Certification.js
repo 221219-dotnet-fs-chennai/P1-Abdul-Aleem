@@ -40,7 +40,7 @@ function SkillProfile(data){
                     <div class="form">
                        
                         <form  class="login-form" name="formcontact1">
-                            <input type="text" placeholder="Certification Name" value="${item.certificationName}" id="uacertname${count}"/>
+                            <input type="text" value="${item.certificationName}" placeholder="Certification Name"  id="uacertname${count}"/>
                             <input type="text" placeholder="Certification Provider" value="${item.acquiredFrom}" id = "uacerprovider${count}"/>
                             <input type="text" placeholder="License No" value="${item.certLicence}" id="ualicno${count}"/>
                 

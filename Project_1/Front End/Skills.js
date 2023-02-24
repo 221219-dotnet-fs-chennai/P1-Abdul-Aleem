@@ -43,8 +43,8 @@ function MyFunction() {
                     <div class="form">
                        
                         <form  class="login-form" name="formcontact1">
-                            <input type="text" placeholder="Skill Name" value=${item.skillName} id="uaddsname${count}"/>
-                            <input type="text" placeholder="Skill Experience" value=${item.skillExperience} id = "uaddsexperience${count}"/>
+                            <input type="text" value="${item.skillName}" placeholder="Skill Name"  id="uaddsname${count}"/>
+                            <input type="text" placeholder="Skill Experience" value="${item.skillExperience}" id = "uaddsexperience${count}"/>
                 
                 
                           <!-- <p class="message" >Not registered? <a href="#">Create an account</a></p> -->

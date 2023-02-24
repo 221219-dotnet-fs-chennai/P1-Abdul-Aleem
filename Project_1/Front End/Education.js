@@ -51,11 +51,11 @@ function MyFunction(){
                 <div class="form">
                    
                     <form  class="login-form" name="formcontact1">
-                      <input type="text" placeholder = "Institution Name"  value=${item.institutionName} id="uaddinsname${count}"/>
-                      <input type="text" placeholder="Course" value =${item.courseName}  id = "uaddconame${count}"/>
-                      <input type="text" placeholder="CGPA" value = ${item.cgpa} id="uaddcgpa${count}"/>
-                      <input type="text" placeholder="Start Date" value =${startDate.substr(0,10)}  id="uaddsdate${count}"/>
-                      <input type="text" placeholder="End Date" value =${endDate.substr(0,10)}  id="uaddedate${count}"/>
+                      <input type="text" placeholder = "Institution Name"  value="${item.institutionName}" id="uaddinsname${count}"/>
+                      <input type="text" placeholder="Course" value ="${item.courseName}"  id = "uaddconame${count}"/>
+                      <input type="text" placeholder="CGPA" value = "${item.cgpa}" id="uaddcgpa${count}"/>
+                      <input type="text" placeholder="Start Date" value ="${startDate.substr(0,10)}"  id="uaddsdate${count}"/>
+                      <input type="text" placeholder="End Date" value ="${endDate.substr(0,10)}"  id="uaddedate${count}"/>
             
             
                       <!-- <p class="message" >Not registered? <a href="#">Create an account</a></p> -->
